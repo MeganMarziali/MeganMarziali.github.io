@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dashboard</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="plotly.html">Plotly</a>
+</li>
+<li>
+  <a href="mailto:&lt;mem2371@cumc.columbia.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/MeganMarziali/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://twitter.com/marzialimegan/">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dashboard</h1>
+
+</div>
+
+
+<pre class="r"><code>data(&quot;ny_noaa&quot;)
+
+sample_noaa = sample_n(ny_noaa, 500)
+
+noaa_clean = 
+  sample_noaa %&gt;% 
+  janitor::clean_names() %&gt;% 
+  separate(date, into = c(&quot;year&quot;, &quot;month&quot;, &quot;day&quot;), convert = TRUE) %&gt;% 
+  mutate(
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    snow_mm = snow,
+    snow = round(snow_mm * 0.03937 * 4) / 4,
+    prcp_mm = prcp,
+    prcp = round(prcp_mm * 0.03937 * 4) / 4)</code></pre>
+<pre><code>
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+
+```r
+noaa_clean %&gt;% 
+  drop_na(tmax) %&gt;% 
+  plot_ly(x = ~tmax, y = ~tmin, color = ~year,
+          alpha = 0.7, type = &quot;scatter&quot;, mode = &quot;markers&quot;, colors = &quot;viridis&quot;)</code></pre>
+<pre><code>## Warning: `arrange_()` is deprecated as of dplyr 0.7.0.
+## Please use `arrange()` instead.
+## See vignette(&#39;programming&#39;) for more help
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<div id="htmlwidget-70170abe57c07d2bd5eb" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-70170abe57c07d2bd5eb">{"x":{"visdat":{"ea9c6892ddd9":["function () ","plotlyVisDat"]},"cur_data":"ea9c6892ddd9","attrs":{"ea9c6892ddd9":{"x":{},"y":{},"mode":"markers","color":{},"colors":"viridis","alpha":0.7,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"tmax"},"yaxis":{"domain":[0,1],"automargin":true,"title":"tmin"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[-7.2,9.4,1.7,16.7,18.9,14.4,1.7,18.9,2.8,27.2,18.8,0,27.2,17.2,21.1,19.4,25,10,25.6,26.1,4.4,19.4,6.1,16.1,-4.4,-5.6,3.9,22.8,21.1,8.3,5.6,18.3,3.9,-1.7,21.7,29.4,17.8,6.1,25.6,5.6,-0.6,-0.6,16.7,29.4,27.8,24.4,5,18.3,-1.7,2.2,-1.7,2.2,5,18.9,33.9,28.3,3.9,2.2,20,28.9,2.8,-16.7,0.6,-2.8,2.8,3.9,6.1,7.2,23.3,1.7,1.7,9.4,17.8,12.2,17.2,13.3,15.6,18.3,17.8,13.9,-3.9,2.2,7.2,14.4,16.7,8.3,-7.2,21.7,20,-1.7,28.9,10,-10,22.8,11.1,21.7,3.3,22.2,2.2,2.2,15.6,-2.2,2.8,29.4,3.9,25.6,10,-1.1,1.1,10,8.3,5,24.4,5,20,-7.8,1.1,-2.2,30,14.4,13.9,22.8,-6.7,3.3,16.7,7.8,9.4,10,12.2,26.7,0,2.8,21.1,-1.7,19.4,6.1,-1.1,2.2,4.4,25,22.2,15.6,23.3,23.9,-11.1,-0.6,-4.4,-2.2,25.6,2.8,12.2,3.3,31.7,-15,25,3.9,31.1,16.1,13.3,4.4,18.3,23.3,22.2,30,18.3,28.9,32.8,27.2,22.2,16.7,21.1,1.1,2.2,21.7,18.9,25,31.1,5,6.1,22.2,9.4,10,3.3,10,27.8,23.3,23.3,20.6,22.2,-15.6,24.4,27.8,16.7,5,10.6,16.7,-11.1,-2.2,4.4,11.7,2.8,25.6,23.9,20.6,21.7,29.4,17.8,23.3,20,22.2,12.2,21.7,7.8,10,18.3,23.9,13.3,13.3,1.1,24.4,-3.3,3.3,-10,3.9,13.9,10.6,26.7,16.7,31.1,6.7,-6.7,20.6,2.2,25,23.3,25.6,5,12.2,11.1,1.7,7.8,0,1.7,25.6,0.6,26.1,15.6,17.8,26.7,23.3,13.3,3.9,27.8,3.3,20.6,11.7,5.6,-3.9,18.9,-6.1,2.2,-2.8,17.2,1.1,17.2,7.8,7.8,11.7,-1.1,12.2,4.4,-2.8,2.2,27.8,0.6,23.9,27.2,31.1,25,7.8,0,30.6,-3.9,25.6,11.1,31.1,10.6,16.1,21.1,27.2,16.7,3.3,16.7,23.9],"y":[-12.8,7.2,-6.7,5.6,15.6,7.8,-9.4,11.1,-3.3,20,6.2,-5,15.6,7.2,10.6,10.6,21.1,3.4,16.1,16.1,-2.8,-1.7,-2.8,1.7,-13.9,-10.6,-1,8.9,15.6,3.9,-7.8,14.4,-1.1,-8.3,7.2,16.1,0,-8.3,16.1,1.7,-6.1,-8.3,12.8,10,17.2,12.8,-10,13.9,-15,-8.3,-7.2,-9.4,-2.2,11.7,18.9,20.6,-3.9,-2.8,6.1,14.4,-3.9,-20.6,-13.3,-12.8,0.6,-2.8,-3.3,-0.6,2.2,-8.3,-13.3,-1.1,6.7,6.7,-0.6,1.1,5,4.4,3.3,3.9,-23.3,-16.7,1.7,2.8,11.1,0.6,-18.3,8.3,11.1,-7.2,19.4,7.2,-17.8,19.4,-8.9,11.1,-6.1,1.1,-7.2,-2.8,4.4,-16.1,0,8.3,-7.2,7.8,7.8,-14.4,-3.9,1.1,-1.1,0,12.8,-3.3,7.8,-15,-5,-10.6,18.3,7.8,7.2,6.7,-9.4,-14.4,10,-4.4,-12.8,6.1,-6.1,12.2,-3.9,-7.8,14.4,-13.9,10.6,0,-6.1,-3.9,-1.7,12.8,10.6,3.3,17.8,9.4,-20.6,-16.7,-16.1,-6.7,19.4,-13.3,-0.6,-12.2,20.6,-28.9,18.3,-1.1,21.1,1.7,1.7,-2.8,16.1,7.2,7.2,8.9,2.2,13.9,19.4,11.7,18.9,1.1,16.1,-3.3,0,10,-2.8,11.7,18.9,2.2,-1.7,17.8,-1.7,-1.7,-18.2,-2.2,8.9,13.9,15.6,10,8.3,-15.6,7.2,13.3,-1.1,-0.6,3.9,-2.6,-19.4,-5.6,2.2,0,-5.6,8.9,10,15.6,11.7,20.6,1.7,7.8,6.1,14.4,3.3,5.6,2.2,3.9,0.6,20,2.2,5,-3.9,0.6,-13.9,-11.7,-19.4,-1.7,1.1,5,5.6,12.2,18.3,-4.4,-19.4,19.4,-7.2,12.2,12.2,12.2,1.1,-0.6,6.1,-11.7,-7.2,-6.7,-5.6,9.4,-9.4,15.6,-2.8,5,16.1,16.1,1.7,-1.7,8.3,-0.6,3.9,-3.3,0.6,-11.7,8.3,-13.9,-0.6,-18.9,5,-3.3,9.4,-8.9,-3.9,5,-8.9,8.9,-2.8,-17.2,0,19.4,-11.7,7.2,7.2,9.4,12.8,-1.7,-13.9,16.7,-10,12.2,1.7,20,6.7,9.4,7.2,14.4,9.4,-13.9,6.7,18.3],"mode":"markers","type":"scatter","marker":{"colorbar":{"title":"year","ticklen":2},"cmin":1981,"cmax":2010,"colorscale":[["0","rgba(68,1,84,0.7)"],["0.0416666666666641","rgba(71,17,100,0.7)"],["0.083333333333336","rgba(72,31,112,0.7)"],["0.125","rgba(71,45,123,0.7)"],["0.166666666666664","rgba(68,58,131,0.7)"],["0.208333333333336","rgba(64,70,136,0.7)"],["0.25","rgba(59,82,139,0.7)"],["0.291666666666664","rgba(54,93,141,0.7)"],["0.333333333333336","rgba(49,104,142,0.7)"],["0.375","rgba(44,114,142,0.7)"],["0.416666666666664","rgba(40,124,142,0.7)"],["0.458333333333336","rgba(36,134,142,0.7)"],["0.5","rgba(33,144,141,0.7)"],["0.541666666666664","rgba(31,154,138,0.7)"],["0.583333333333336","rgba(32,164,134,0.7)"],["0.625","rgba(39,173,129,0.7)"],["0.666666666666664","rgba(53,183,121,0.7)"],["0.708333333333336","rgba(71,193,110,0.7)"],["0.75","rgba(93,200,99,0.7)"],["0.791666666666664","rgba(117,208,84,0.7)"],["0.833333333333336","rgba(143,214,68,0.7)"],["0.875","rgba(170,220,50,0.7)"],["0.916666666666664","rgba(199,224,32,0.7)"],["0.958333333333336","rgba(227,228,24,0.7)"],["1","rgba(253,231,37,0.7)"]],"showscale":false,"color":[1996,2009,2000,1990,1992,2004,2007,2009,1993,2009,2007,2000,1991,1985,1997,2009,1993,2006,1984,1981,2000,1991,1999,1986,2007,1995,2007,1985,1992,1982,2003,1998,1987,1986,2000,1989,1991,1999,2001,2000,1987,2004,2006,1988,1982,1982,1992,1985,1986,1991,1982,2007,1999,2007,2005,1998,2008,2008,1986,1981,1984,2007,1981,1995,2002,1992,2006,1989,2000,2005,1997,2002,1988,1992,2002,1984,1989,2009,1981,1990,1993,2001,2004,1993,2004,2004,1997,1981,1996,1986,2000,2010,1994,2006,2007,1991,1983,1986,1991,2001,2003,1995,1981,2006,1997,2007,2004,1997,1988,1983,1990,1998,1982,1992,2006,1981,1983,2002,1983,1985,1994,1986,1981,2001,1982,1983,2002,1987,2000,2007,2010,1984,1992,2001,2000,1987,1995,1992,2002,2010,1982,1985,1993,2010,1996,2009,2010,1987,1997,1998,1990,2003,1992,1983,2010,1987,1991,1995,2006,1992,2008,1994,2004,1983,1989,1983,1987,2000,1995,1989,2004,1986,1993,2009,1981,2006,1983,1988,2001,1996,1989,1991,2008,1998,2007,2009,1986,1986,1989,2003,2001,1991,2009,1993,1984,2007,2000,1995,1997,1996,2004,1992,2004,1992,1986,1987,1993,1981,1992,2008,2005,1998,2000,1981,1985,2007,2000,1999,1997,1999,1997,2001,2007,2010,1998,1984,1997,1985,1987,2002,1990,2006,2001,2008,1990,1992,1997,1997,2001,1988,2005,1988,1986,2009,1990,1998,1989,2002,2008,2006,2000,1984,2002,2005,1994,1983,2002,1982,1992,2007,2008,1986,1995,1983,1986,1987,1981,1988,1992,1995,1987,2000,2010,2003,1983,2003,2006,1995,1992,2004,1994,1999,2003,1987,2000,1984,2003,2010,1989,1992,1982,2008,2008,1985],"line":{"colorbar":{"title":"","ticklen":2},"cmin":1981,"cmax":2010,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666641","rgba(71,17,100,1)"],["0.083333333333336","rgba(72,31,112,1)"],["0.125","rgba(71,45,123,1)"],["0.166666666666664","rgba(68,58,131,1)"],["0.208333333333336","rgba(64,70,136,1)"],["0.25","rgba(59,82,139,1)"],["0.291666666666664","rgba(54,93,141,1)"],["0.333333333333336","rgba(49,104,142,1)"],["0.375","rgba(44,114,142,1)"],["0.416666666666664","rgba(40,124,142,1)"],["0.458333333333336","rgba(36,134,142,1)"],["0.5","rgba(33,144,141,1)"],["0.541666666666664","rgba(31,154,138,1)"],["0.583333333333336","rgba(32,164,134,1)"],["0.625","rgba(39,173,129,1)"],["0.666666666666664","rgba(53,183,121,1)"],["0.708333333333336","rgba(71,193,110,1)"],["0.75","rgba(93,200,99,1)"],["0.791666666666664","rgba(117,208,84,1)"],["0.833333333333336","rgba(143,214,68,1)"],["0.875","rgba(170,220,50,1)"],["0.916666666666664","rgba(199,224,32,1)"],["0.958333333333336","rgba(227,228,24,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[1996,2009,2000,1990,1992,2004,2007,2009,1993,2009,2007,2000,1991,1985,1997,2009,1993,2006,1984,1981,2000,1991,1999,1986,2007,1995,2007,1985,1992,1982,2003,1998,1987,1986,2000,1989,1991,1999,2001,2000,1987,2004,2006,1988,1982,1982,1992,1985,1986,1991,1982,2007,1999,2007,2005,1998,2008,2008,1986,1981,1984,2007,1981,1995,2002,1992,2006,1989,2000,2005,1997,2002,1988,1992,2002,1984,1989,2009,1981,1990,1993,2001,2004,1993,2004,2004,1997,1981,1996,1986,2000,2010,1994,2006,2007,1991,1983,1986,1991,2001,2003,1995,1981,2006,1997,2007,2004,1997,1988,1983,1990,1998,1982,1992,2006,1981,1983,2002,1983,1985,1994,1986,1981,2001,1982,1983,2002,1987,2000,2007,2010,1984,1992,2001,2000,1987,1995,1992,2002,2010,1982,1985,1993,2010,1996,2009,2010,1987,1997,1998,1990,2003,1992,1983,2010,1987,1991,1995,2006,1992,2008,1994,2004,1983,1989,1983,1987,2000,1995,1989,2004,1986,1993,2009,1981,2006,1983,1988,2001,1996,1989,1991,2008,1998,2007,2009,1986,1986,1989,2003,2001,1991,2009,1993,1984,2007,2000,1995,1997,1996,2004,1992,2004,1992,1986,1987,1993,1981,1992,2008,2005,1998,2000,1981,1985,2007,2000,1999,1997,1999,1997,2001,2007,2010,1998,1984,1997,1985,1987,2002,1990,2006,2001,2008,1990,1992,1997,1997,2001,1988,2005,1988,1986,2009,1990,1998,1989,2002,2008,2006,2000,1984,2002,2005,1994,1983,2002,1982,1992,2007,2008,1986,1995,1983,1986,1987,1981,1988,1992,1995,1987,2000,2010,2003,1983,2003,2006,1995,1992,2004,1994,1999,2003,1987,2000,1984,2003,2010,1989,1992,1982,2008,2008,1985]}},"xaxis":"x","yaxis":"y","frame":null},{"x":[-16.7,33.9],"y":[-28.9,21.1],"type":"scatter","mode":"markers","opacity":0,"hoverinfo":"none","showlegend":false,"marker":{"colorbar":{"title":"year","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"cmin":1981,"cmax":2010,"colorscale":[["0","rgba(68,1,84,0.7)"],["0.0416666666666641","rgba(71,17,100,0.7)"],["0.083333333333336","rgba(72,31,112,0.7)"],["0.125","rgba(71,45,123,0.7)"],["0.166666666666664","rgba(68,58,131,0.7)"],["0.208333333333336","rgba(64,70,136,0.7)"],["0.25","rgba(59,82,139,0.7)"],["0.291666666666664","rgba(54,93,141,0.7)"],["0.333333333333336","rgba(49,104,142,0.7)"],["0.375","rgba(44,114,142,0.7)"],["0.416666666666664","rgba(40,124,142,0.7)"],["0.458333333333336","rgba(36,134,142,0.7)"],["0.5","rgba(33,144,141,0.7)"],["0.541666666666664","rgba(31,154,138,0.7)"],["0.583333333333336","rgba(32,164,134,0.7)"],["0.625","rgba(39,173,129,0.7)"],["0.666666666666664","rgba(53,183,121,0.7)"],["0.708333333333336","rgba(71,193,110,0.7)"],["0.75","rgba(93,200,99,0.7)"],["0.791666666666664","rgba(117,208,84,0.7)"],["0.833333333333336","rgba(143,214,68,0.7)"],["0.875","rgba(170,220,50,0.7)"],["0.916666666666664","rgba(199,224,32,0.7)"],["0.958333333333336","rgba(227,228,24,0.7)"],["1","rgba(253,231,37,0.7)"]],"showscale":true,"color":[1981,2010],"line":{"color":"rgba(255,127,14,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="column" class="section level2" data-width="350">
+<h2>Column</h2>
+<div id="chart-b" class="section level3">
+<h3>Chart B</h3>
+<pre class="r"><code>noaa_clean %&gt;% 
+  drop_na(tmax) %&gt;% 
+  count(tmax) %&gt;% 
+  plot_ly(x = ~tmax, y = ~n,
+          alpha = 0.5, type = &quot;bar&quot;)</code></pre>
+<div id="htmlwidget-f72060cb7be912a4f740" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f72060cb7be912a4f740">{"x":{"visdat":{"ea9c49ad64b6":["function () ","plotlyVisDat"]},"cur_data":"ea9c49ad64b6","attrs":{"ea9c49ad64b6":{"x":{},"y":{},"alpha":0.5,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"tmax"},"yaxis":{"domain":[0,1],"automargin":true,"title":"n"},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[-16.7,-15.6,-15,-11.1,-10,-7.8,-7.2,-6.7,-6.1,-5.6,-4.4,-3.9,-3.3,-2.8,-2.2,-1.7,-1.1,-0.6,0,0.6,1.1,1.7,2.2,2.8,3.3,3.9,4.4,5,5.6,6.1,6.7,7.2,7.8,8.3,9.4,10,10.6,11.1,11.7,12.2,13.3,13.9,14.4,15.6,16.1,16.7,17.2,17.8,18.3,18.8,18.9,19.4,20,20.6,21.1,21.7,22.2,22.8,23.3,23.9,24.4,25,25.6,26.1,26.7,27.2,27.8,28.3,28.9,29.4,30,30.6,31.1,31.7,32.8,33.9],"y":[1,1,1,2,2,1,2,2,1,1,2,3,1,3,4,5,3,3,4,3,5,6,11,7,7,8,5,7,3,5,1,2,6,3,4,8,3,3,3,6,5,3,3,4,3,10,4,5,6,1,5,3,4,4,5,6,7,3,8,5,4,6,8,2,3,5,5,1,3,4,2,1,5,1,1,1],"type":"bar","marker":{"color":"rgba(31,119,180,0.5)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,0.5)"},"error_x":{"color":"rgba(31,119,180,0.5)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="chart-c" class="section level3">
+<h3>Chart C</h3>
+<pre class="r"><code>noaa_clean %&gt;% 
+  drop_na(tmax) %&gt;% 
+  select(year, month, tmax) %&gt;% 
+  plot_ly(x = ~year, y = ~tmax, type = &quot;box&quot;, colors = &quot;viridis&quot;)</code></pre>
+<div id="htmlwidget-05294b6bbcd39df34e67" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-05294b6bbcd39df34e67">{"x":{"visdat":{"ea9c3ee207be":["function () ","plotlyVisDat"]},"cur_data":"ea9c3ee207be","attrs":{"ea9c3ee207be":{"x":{},"y":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"year"},"yaxis":{"domain":[0,1],"automargin":true,"title":"tmax"},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","x":[1996,2009,2000,1990,1992,2004,2007,2009,1993,2009,2007,2000,1991,1985,1997,2009,1993,2006,1984,1981,2000,1991,1999,1986,2007,1995,2007,1985,1992,1982,2003,1998,1987,1986,2000,1989,1991,1999,2001,2000,1987,2004,2006,1988,1982,1982,1992,1985,1986,1991,1982,2007,1999,2007,2005,1998,2008,2008,1986,1981,1984,2007,1981,1995,2002,1992,2006,1989,2000,2005,1997,2002,1988,1992,2002,1984,1989,2009,1981,1990,1993,2001,2004,1993,2004,2004,1997,1981,1996,1986,2000,2010,1994,2006,2007,1991,1983,1986,1991,2001,2003,1995,1981,2006,1997,2007,2004,1997,1988,1983,1990,1998,1982,1992,2006,1981,1983,2002,1983,1985,1994,1986,1981,2001,1982,1983,2002,1987,2000,2007,2010,1984,1992,2001,2000,1987,1995,1992,2002,2010,1982,1985,1993,2010,1996,2009,2010,1987,1997,1998,1990,2003,1992,1983,2010,1987,1991,1995,2006,1992,2008,1994,2004,1983,1989,1983,1987,2000,1995,1989,2004,1986,1993,2009,1981,2006,1983,1988,2001,1996,1989,1991,2008,1998,2007,2009,1986,1986,1989,2003,2001,1991,2009,1993,1984,2007,2000,1995,1997,1996,2004,1992,2004,1992,1986,1987,1993,1981,1992,2008,2005,1998,2000,1981,1985,2007,2000,1999,1997,1999,1997,2001,2007,2010,1998,1984,1997,1985,1987,2002,1990,2006,2001,2008,1990,1992,1997,1997,2001,1988,2005,1988,1986,2009,1990,1998,1989,2002,2008,2006,2000,1984,2002,2005,1994,1983,2002,1982,1992,2007,2008,1986,1995,1983,1986,1987,1981,1988,1992,1995,1987,2000,2010,2003,1983,2003,2006,1995,1992,2004,1994,1999,2003,1987,2000,1984,2003,2010,1989,1992,1982,2008,2008,1985],"y":[-7.2,9.4,1.7,16.7,18.9,14.4,1.7,18.9,2.8,27.2,18.8,0,27.2,17.2,21.1,19.4,25,10,25.6,26.1,4.4,19.4,6.1,16.1,-4.4,-5.6,3.9,22.8,21.1,8.3,5.6,18.3,3.9,-1.7,21.7,29.4,17.8,6.1,25.6,5.6,-0.6,-0.6,16.7,29.4,27.8,24.4,5,18.3,-1.7,2.2,-1.7,2.2,5,18.9,33.9,28.3,3.9,2.2,20,28.9,2.8,-16.7,0.6,-2.8,2.8,3.9,6.1,7.2,23.3,1.7,1.7,9.4,17.8,12.2,17.2,13.3,15.6,18.3,17.8,13.9,-3.9,2.2,7.2,14.4,16.7,8.3,-7.2,21.7,20,-1.7,28.9,10,-10,22.8,11.1,21.7,3.3,22.2,2.2,2.2,15.6,-2.2,2.8,29.4,3.9,25.6,10,-1.1,1.1,10,8.3,5,24.4,5,20,-7.8,1.1,-2.2,30,14.4,13.9,22.8,-6.7,3.3,16.7,7.8,9.4,10,12.2,26.7,0,2.8,21.1,-1.7,19.4,6.1,-1.1,2.2,4.4,25,22.2,15.6,23.3,23.9,-11.1,-0.6,-4.4,-2.2,25.6,2.8,12.2,3.3,31.7,-15,25,3.9,31.1,16.1,13.3,4.4,18.3,23.3,22.2,30,18.3,28.9,32.8,27.2,22.2,16.7,21.1,1.1,2.2,21.7,18.9,25,31.1,5,6.1,22.2,9.4,10,3.3,10,27.8,23.3,23.3,20.6,22.2,-15.6,24.4,27.8,16.7,5,10.6,16.7,-11.1,-2.2,4.4,11.7,2.8,25.6,23.9,20.6,21.7,29.4,17.8,23.3,20,22.2,12.2,21.7,7.8,10,18.3,23.9,13.3,13.3,1.1,24.4,-3.3,3.3,-10,3.9,13.9,10.6,26.7,16.7,31.1,6.7,-6.7,20.6,2.2,25,23.3,25.6,5,12.2,11.1,1.7,7.8,0,1.7,25.6,0.6,26.1,15.6,17.8,26.7,23.3,13.3,3.9,27.8,3.3,20.6,11.7,5.6,-3.9,18.9,-6.1,2.2,-2.8,17.2,1.1,17.2,7.8,7.8,11.7,-1.1,12.2,4.4,-2.8,2.2,27.8,0.6,23.9,27.2,31.1,25,7.8,0,30.6,-3.9,25.6,11.1,31.1,10.6,16.1,21.1,27.2,16.7,3.3,16.7,23.9],"type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
