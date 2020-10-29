@@ -39,7 +39,7 @@ noaa_clean =
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Scatter plot
 
 ```{r}
 noaa_clean %>% 
@@ -51,7 +51,7 @@ noaa_clean %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Bar chart
 
 ```{r}
 noaa_clean %>% 
@@ -61,7 +61,7 @@ noaa_clean %>%
           alpha = 0.5, type = "bar")
 ```
 
-### Chart C
+### Box plot
 
 ```{r}
 noaa_clean %>% 
