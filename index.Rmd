@@ -1,0 +1,20 @@
+---
+title: "Megan Marziali"
+output: 
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_float: true
+---
+
+### Biography
+
+Megan is a 2nd year MPH student at Columbia Mailman School of Public Health. She is in the Department of Epidemiology, with a certificate in Advanced Epidemiology. Her research interests are related to substance use, mental health, HIV and social networks.
+
+### To learn more
+
+To learn more about my research and professional experience, please visit the [about me](about.html) page.
+
+For a full list of publications, including conference presentations, visit the [publications](publications.html) page.
+
+
