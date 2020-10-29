@@ -15,18 +15,20 @@ library(plotly)
 ```
 
 ```{r}
-data("nyc_airbnb")
+data("ny_noaa")
 
-nyc_airbnb = 
-  nyc_airbnb %>% 
-  mutate(rating = review_scores_location / 2) %>% 
-  select(neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>% 
-  filter(
-    neighbourhood_group == "Manhattan",
-    price %in% 100:500,
-    room_type == "Entire home/apt"
-  ) %>% 
-  drop_na(rating)
+sample_noaa = sample_n(ny_noaa, 500)
+
+noaa_clean = 
+  sample_noaa %>% 
+  janitor::clean_names() %>% 
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>% 
+  mutate(
+    tmax = as.numeric(tmax),
+    tmin = as.numeric(tmin),
+    snow_mm = snow,
+    snow = round(snow_mm * 0.03937 * 4) / 4)
+  
 ```
 
 ```
@@ -38,9 +40,8 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-nyc_airbnb %>% 
-  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) %>% 
-  plot_ly(x = ~lat, y = ~long, 
+instacart_clean %>% 
+  plot_ly(x = ~aisle, y = ~long, 
           color = ~price, text = ~text_label,
           alpha = 0.5, type = "scatter", mode = "markers")
 ```
