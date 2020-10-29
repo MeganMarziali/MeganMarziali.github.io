@@ -1,0 +1,43 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+### Education
+
+**Master of Public Health** [Sept./19 – Present]{style="float:right"}     
+**Epidemiology | Advanced Epidemiology**  
+Columbia University, New York City, United States  
+Merit Scholar
+
+**Bachelor of Science** [Sept./13 – May/18]{style="float:right"}  
+**Major in Microbiology and Immunology with Distinction**  
+University of British Columbia, Vancouver, Canada  
+Dean’s Honour List  
+Chancellor’s Scholar Award
+
+### Research Experience
+
+**Research Assistant** [Nov./19 – Present]{style="float:right"}     
+*Department of Epidemiology*  
+*Mailman School of Public Health Columbia University, New York*    
+
+* Carrying out analyses regarding substance use among adults and adolescents in the United States, including the role of social networks in substance use behaviors.  
+* Conducting a literature review regarding machine learning methodology pertaining to marijuana policies and substance use outcomes using nationwide data.  
+* Developing a mobile application to be used by physicians and healthcare providers at New York Presbyterian regarding optimal opioid prescribing for select general surgery and pediatrics procedures.
+
+**Research Assistant** [May/17 – Present]{style="float:right"}
+*Epidemiology and Population Health*
+*BC Centre for Excellence in HIV/AIDS, Vancouver*
+
+* Gaining familiarity with epidemiological methods through leading analyses involving cross-sectional studies, longitudinal studies, and administrative datasets.
+* Carried out community-based participatory research to investigate issues surrounding HIV and aging; residential outcomes in an HIV-specific supportive housing unit in Vancouver, BC; and depressive symptoms among PLHIV living in supportive housing.
+
+
+
+
+
+
