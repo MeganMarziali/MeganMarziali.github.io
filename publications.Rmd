@@ -1,0 +1,72 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+### Peer-Reviewed Publications
+
+**Marziali ME**, Prins S, Kajeepeta S, Martins SS. Police interactions in schools and the resulting impact on legal cynicism and attitudes towards law enforcement. 2020. [in preparation]
+
+**Marziali ME**, Levy NS, Martins SS. Perceptions of peer and parental attitudes towards substance use and actual adolescent substance use: Analyzing the impact of adolescent-confidant relationships. 2020. Journal of Adolescent Health [submitted].
+
+**Marziali ME**, Cassidy-Marie C, Oduwole OA, Hogg RS. Differences in life expectancy gains among Indigenous populations in Australia, Canada and New Zealand: A call for improved metrics in Indigenous health equity. 2020. [in preparation]
+
+**Marziali ME**, Hogg RS, Oduwole OA, Card KG. Predictors of COVID-19 testing rates: A cross-country comparison. 2020. The International Journal of Infectious Disease [under review].
+
+Martins SS, Bruzelius E, Stingone JA, Wheeler-Martin K, Akbarnejad H, Mauro CM, **Marziali ME**, Samples H, Crystal S, Davis CS, Rudolph KE, Keyes KM, Hasin DS, Cerdá M. Prescription opioid laws and opioid-prescibing: Identifying salient opioid law provisions with machine learning. 2020. Epidemiology [submitted].
+
+Castaldelli-Maia JM, **Marziali ME**, Lu Z, Martins SS. Investigating the effect of national government physical distancing measures on depression and anxiety during the COVID-19 pandemic through meta-analysis and meta-regression. 2020. JAMA [submitted].
+
+Ismael F, Bizario JCS, Battagin T, Zaramella B, Leal FE, Torales J, Ventriglio A, **Marziali ME**, Martins SS, Castaldelli-Maia JM. Post-infection depression, anxiety and PTSD: A retrospective cohort study with mild COVID-19 patients. 2020. Lancet Psychiatry [submitted].
+
+**Marziali ME**, McLinden T, Card K, Wong C, Trigg J, Salters K, Closson K, Lima V, Hogg RS. Social isolation and all-cause mortality among people living with HIV in British Columbia, Canada. AIDS and Behavior. 2020; doi:10.1007/s10461-020-03000-2
+
+**Marziali ME**, Card KG, McLinden T, Wang L, Trigg J, Hogg RS. Physical distancing in COVID-19 may exacerbate experiences of social isolation among people living with HIV. AIDS and Behavior. 2020; doi:10.1007/s10461-020-02872-8 
+
+**Marziali ME**, Armstrong H, Moore DM, Roth EA, Closson K, McLinden T, Lachowsky NJ, Harris M, Hogg RS, Card KG. Loneliness and self-rated physical health among gay, bisexual and other men who have sex with men in Vancouver, British Columbia. Journal of Epidemiology and Community Health. Journal of Epidemiology and Community Health. 2020;0:1-7. doi:10.1136/jech-2019-213566
+
+**Marziali ME**, Card K, McLinden T, Closson K,  Wang L, Trigg J, Salters K, Lima VD, Parashar S, Hogg RS. Correlates of social isolation among people living with HIV in Vancouver, British Columbia, Canada. AIDS Care. 2020; doi:10.1080/09540121.2020.1757607
+
+Koehn K, Collins AB, Burgess H,, Von Bischoffshausen O, **Marziali ME**, Salters K, Hogg RS , Parashar S. Understanding the pervasiveness of trauma in a housing facility for people living with HIV: a qualitative analysis from Vancouver, Canada. Journal of Housing Studies. 2019; 
+doi:10.1080/02673037.2019.1648773
+
+Burgess H, **Marziali ME**, Collins A, von Bischoffshausen O, Lyndon S, Stacey K, Parashar S, Hogg RS. The effect of building policies on tenant behavioral outcomes in an HIV-specific supportive housing unit. Housing Studies. [submitted]
+
+O’Neill Z, Bulka O, **Marziali M**, Nah R. Construction of luxCDABE reporter plasmids to investigate regulation of the acrAB and acrEF operons by the AcrS repressor in Escherichia coli BW25113. Journal of Experimental Microbiology & Immunology+. 2018;4:1-9.
+
+Castellana B, Perdu S, Kim Y, Chan K, Atif J, **Marziali M**, Beristain AG. Maternal obesity alters uterine NK cell activity through a functional KIR2DL1/S1 imbalance. Immunology & Cell Biology. 2018;96(8):805-819.
+
+### Oral Presentations
+
+***Marziali ME***, Armstrong H, Closson K, Barath J, Wang L, McLinden T, Harris M, Roth EA, Moore DM, Lachowsky NJ, Hogg RS, Card KG. Loneliness and Self-Rated Physical Health among Gay, Bisexual and other Men who have Sex with Men in Vancouver, Canada. New York City Epidemiology Forum. Feb 28, 2020. New York City, New York.
+
+***Marziali ME***, Card K, Armstrong H, Closson K, Barath J, Wang L, McLinden T, Harris M, Roth EA, Moore DM, Lachowsky NJ, Hogg RS. Association Between Loneliness and Physical Health among Gay, Bisexual and other Men who have Sex with Men in Vancouver, Canada. Gay Men’s Health Summit. Oct. 31 – Nov. 1, 2019. Vancouver, BC, Canada.
+
+***Marziali ME***, McLinden T, Card K, Salters K, Closson K, Wang L, Trigg J, Lima V, Allan B, Hogg RS. Predictors of Social Isolation Among People Living with HIV in British Columbia, Canada. 28th Annual Canadian Conference on HIV/AIDS Research. May 9 – 12, 2019. Saskatoon, SK, Canada. 
+
+***Marziali ME***, Card K, McLinden T, Salters K, Closson K, Wang L, Trigg J, Lima V, Allan B, Hogg RS. Relationship Between Social Isolation and Mortality Among People Living with HIV in British Columbia, Canada. 28th Annual Canadian Conference on HIV/AIDS Research. May 9 – 12, 2019. Saskatoon, SK, Canada. 
+
+***Marziali ME***, *Nicholson V*, Frank P, Sanchez M, Webster K, Kibel M, Brown J, Closson K, Hogg RS. The Importance of Art in Knowledge Dissemination and Translation: Engaging the Public. Health xChange. May 7, 2019. Vancouver, BC, Canada.
+
+### Poster Presentations
+
+*Closson K*, Nicholson V, Lee M, Card K, Cassidy-Matthews C, McLinden T, **Marziali ME**, Trigg J, Wang L, Parashar S, Montaner J, Gibbs A, Haart TA, Kaida A, Hogg RS. Examining differences in syndemic factors by gender and sexual orientation among women, straight men, and gay, bisexual, and other men who have sex with men living with HIV in British Columbia, Canada. 23rd International AIDS Conference (AIDS 2020). July 6-10, 2020. [Internet].
+
+***Marziali ME***, Lyndon S, Burgess H, Salters K, Koehn K, Vorobyova A, Parashar S. A Provincial Overview of Community-Based Organizational Supports for Older Adults Living with HIV in British Columbia. 29th Annual Canadian Conference on HIV/AIDS (CAHR). April 30 – May 3, 2020. Quebec City, QC, Canada.
+
+*Skakoon-Sparling S*, Sang S, Card KG, **Marziali ME**, Lachowsky NJ, Moore D, Hogg RS, Lal A, Hart TA. Loneliness and Sexual Health Among Gay, Bisexual, and Other Men who Have Sex with Men (GBM). 29th Annual Canadian Conference on HIV/AIDS (CAHR). April 30 – May 3, 2020. Quebec City, QC, Canada.
+
+***Marziali ME***, McLinden T, Card K, Closson K, Wang L, Trigg J, Salters K, Lima V, Parashar S, Hogg RS. The Relationship Between Social Isolation and All-Cause Mortality Among People Living with HIV in British Columbia, Canada. American Psychopathological Association (APPA) Annual Meeting. March 5-7, 2020. New York, NY, United States. 
+
+*Kibel M*, Wu A, Closson K, St-Jean M, **Marziali M**, Ni Gusti Ayu N, Salters K, McLinden T, Eyawo O, Patterson T, Moore D, Elefante J, Joe R, Barrios R, Hogg RS, Lima V. Mental Health Diagnoses in a Population-Based Cohort of People Living with HIV. 28th Annual Canadian Conference on HIV/AIDS Research (CAHR). May 9-12, 2019. Saskatoon, SK, Canada. 
+
+*Kibel M*, Wu A, Closson K, St-Jean M, **Marziali M**, Ni Gusti Ayu N, Salters K, McLinden T, Eyawo O, Patterson T, Moore D, Elefante J, Joe R, Barrios R, Hogg RS, Lima V. Mental Health Diagnoses in a Population-Based Cohort of People Living with HIV. 23rd International Workshop on HIV and Hepatitis Observational Databases International Workshop on HIV and Hepatitis Observational Databases (IWHOD) 2019. March 28-30, 2019. Athens, Greece. 
+
+*Burgess H*, **Marziali M**, Collins A, von Bischoffshausen O, Lyndon S, Stacey K, Parashar S, Hogg RS. Supportive housing for people living with HIV: a qualitative analysis of operational policies in Vancouver, Canada. Poster Presentation. North American Housing & HIV Summit, Washington DC, August 2018.
+
+*Collins AB*, Koehn K, von Bischoffshausen O, **Marziali M**, Burgess H, Salters K, Hogg RS, Parashar S. The pervasiveness of trauma: understanding the intersection of trauma and housing amongst people living in an HIV-specific housing facility. Poster Presentation. Canadian Conference on HIV/AIDS Research, Vancouver, Canada, April 2018.
+
+*Brown NF*, **Marziali M**, Lutzke J, Foster LJ. High-throughput genetic analysis of Salmonella-host interactions. Poster Presentation. HUPO (Human Proteome Organization) annual world congress, Vancouver, British Columbia, Canada, 2015.

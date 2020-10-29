@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Resume</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="mailto:&lt;mem2371@cumc.columbia.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/MeganMarziali/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://twitter.com/marzialimegan/">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Resume</h1>
+
+</div>
+
+
+<div id="peer-reviewed-publications" class="section level3">
+<h3>Peer-Reviewed Publications</h3>
+<p><strong>Marziali ME</strong>, Prins S, Kajeepeta S, Martins SS. Police interactions in schools and the resulting impact on legal cynicism and attitudes towards law enforcement. 2020. [in preparation]</p>
+<p><strong>Marziali ME</strong>, Levy NS, Martins SS. Perceptions of peer and parental attitudes towards substance use and actual adolescent substance use: Analyzing the impact of adolescent-confidant relationships. 2020. Journal of Adolescent Health [submitted].</p>
+<p><strong>Marziali ME</strong>, Cassidy-Marie C, Oduwole OA, Hogg RS. Differences in life expectancy gains among Indigenous populations in Australia, Canada and New Zealand: A call for improved metrics in Indigenous health equity. 2020. [in preparation]</p>
+<p><strong>Marziali ME</strong>, Hogg RS, Oduwole OA, Card KG. Predictors of COVID-19 testing rates: A cross-country comparison. 2020. The International Journal of Infectious Disease [under review].</p>
+<p>Martins SS, Bruzelius E, Stingone JA, Wheeler-Martin K, Akbarnejad H, Mauro CM, <strong>Marziali ME</strong>, Samples H, Crystal S, Davis CS, Rudolph KE, Keyes KM, Hasin DS, Cerdá M. Prescription opioid laws and opioid-prescibing: Identifying salient opioid law provisions with machine learning. 2020. Epidemiology [submitted].</p>
+<p>Castaldelli-Maia JM, <strong>Marziali ME</strong>, Lu Z, Martins SS. Investigating the effect of national government physical distancing measures on depression and anxiety during the COVID-19 pandemic through meta-analysis and meta-regression. 2020. JAMA [submitted].</p>
+<p>Ismael F, Bizario JCS, Battagin T, Zaramella B, Leal FE, Torales J, Ventriglio A, <strong>Marziali ME</strong>, Martins SS, Castaldelli-Maia JM. Post-infection depression, anxiety and PTSD: A retrospective cohort study with mild COVID-19 patients. 2020. Lancet Psychiatry [submitted].</p>
+<p><strong>Marziali ME</strong>, McLinden T, Card K, Wong C, Trigg J, Salters K, Closson K, Lima V, Hogg RS. Social isolation and all-cause mortality among people living with HIV in British Columbia, Canada. AIDS and Behavior. 2020; <a href="doi:10.1007/s10461-020-03000-2" class="uri">doi:10.1007/s10461-020-03000-2</a></p>
+<p><strong>Marziali ME</strong>, Card KG, McLinden T, Wang L, Trigg J, Hogg RS. Physical distancing in COVID-19 may exacerbate experiences of social isolation among people living with HIV. AIDS and Behavior. 2020; <a href="doi:10.1007/s10461-020-02872-8" class="uri">doi:10.1007/s10461-020-02872-8</a></p>
+<p><strong>Marziali ME</strong>, Armstrong H, Moore DM, Roth EA, Closson K, McLinden T, Lachowsky NJ, Harris M, Hogg RS, Card KG. Loneliness and self-rated physical health among gay, bisexual and other men who have sex with men in Vancouver, British Columbia. Journal of Epidemiology and Community Health. Journal of Epidemiology and Community Health. 2020;0:1-7. <a href="doi:10.1136/jech-2019-213566" class="uri">doi:10.1136/jech-2019-213566</a></p>
+<p><strong>Marziali ME</strong>, Card K, McLinden T, Closson K, Wang L, Trigg J, Salters K, Lima VD, Parashar S, Hogg RS. Correlates of social isolation among people living with HIV in Vancouver, British Columbia, Canada. AIDS Care. 2020; <a href="doi:10.1080/09540121.2020.1757607" class="uri">doi:10.1080/09540121.2020.1757607</a></p>
+<p>Koehn K, Collins AB, Burgess H,, Von Bischoffshausen O, <strong>Marziali ME</strong>, Salters K, Hogg RS , Parashar S. Understanding the pervasiveness of trauma in a housing facility for people living with HIV: a qualitative analysis from Vancouver, Canada. Journal of Housing Studies. 2019; <a href="doi:10.1080/02673037.2019.1648773" class="uri">doi:10.1080/02673037.2019.1648773</a></p>
+<p>Burgess H, <strong>Marziali ME</strong>, Collins A, von Bischoffshausen O, Lyndon S, Stacey K, Parashar S, Hogg RS. The effect of building policies on tenant behavioral outcomes in an HIV-specific supportive housing unit. Housing Studies. [submitted]</p>
+<p>O’Neill Z, Bulka O, <strong>Marziali M</strong>, Nah R. Construction of luxCDABE reporter plasmids to investigate regulation of the acrAB and acrEF operons by the AcrS repressor in Escherichia coli BW25113. Journal of Experimental Microbiology &amp; Immunology+. 2018;4:1-9.</p>
+<p>Castellana B, Perdu S, Kim Y, Chan K, Atif J, <strong>Marziali M</strong>, Beristain AG. Maternal obesity alters uterine NK cell activity through a functional KIR2DL1/S1 imbalance. Immunology &amp; Cell Biology. 2018;96(8):805-819.</p>
+</div>
+<div id="oral-presentations" class="section level3">
+<h3>Oral Presentations</h3>
+<p><strong><em>Marziali ME</em></strong>, Armstrong H, Closson K, Barath J, Wang L, McLinden T, Harris M, Roth EA, Moore DM, Lachowsky NJ, Hogg RS, Card KG. Loneliness and Self-Rated Physical Health among Gay, Bisexual and other Men who have Sex with Men in Vancouver, Canada. New York City Epidemiology Forum. Feb 28, 2020. New York City, New York.</p>
+<p><strong><em>Marziali ME</em></strong>, Card K, Armstrong H, Closson K, Barath J, Wang L, McLinden T, Harris M, Roth EA, Moore DM, Lachowsky NJ, Hogg RS. Association Between Loneliness and Physical Health among Gay, Bisexual and other Men who have Sex with Men in Vancouver, Canada. Gay Men’s Health Summit. Oct. 31 – Nov. 1, 2019. Vancouver, BC, Canada.</p>
+<p><strong><em>Marziali ME</em></strong>, McLinden T, Card K, Salters K, Closson K, Wang L, Trigg J, Lima V, Allan B, Hogg RS. Predictors of Social Isolation Among People Living with HIV in British Columbia, Canada. 28th Annual Canadian Conference on HIV/AIDS Research. May 9 – 12, 2019. Saskatoon, SK, Canada.</p>
+<p><strong><em>Marziali ME</em></strong>, Card K, McLinden T, Salters K, Closson K, Wang L, Trigg J, Lima V, Allan B, Hogg RS. Relationship Between Social Isolation and Mortality Among People Living with HIV in British Columbia, Canada. 28th Annual Canadian Conference on HIV/AIDS Research. May 9 – 12, 2019. Saskatoon, SK, Canada.</p>
+<p><strong><em>Marziali ME</em></strong>, <em>Nicholson V</em>, Frank P, Sanchez M, Webster K, Kibel M, Brown J, Closson K, Hogg RS. The Importance of Art in Knowledge Dissemination and Translation: Engaging the Public. Health xChange. May 7, 2019. Vancouver, BC, Canada.</p>
+</div>
+<div id="poster-presentations" class="section level3">
+<h3>Poster Presentations</h3>
+<p><em>Closson K</em>, Nicholson V, Lee M, Card K, Cassidy-Matthews C, McLinden T, <strong>Marziali ME</strong>, Trigg J, Wang L, Parashar S, Montaner J, Gibbs A, Haart TA, Kaida A, Hogg RS. Examining differences in syndemic factors by gender and sexual orientation among women, straight men, and gay, bisexual, and other men who have sex with men living with HIV in British Columbia, Canada. 23rd International AIDS Conference (AIDS 2020). July 6-10, 2020. [Internet].</p>
+<p><strong><em>Marziali ME</em></strong>, Lyndon S, Burgess H, Salters K, Koehn K, Vorobyova A, Parashar S. A Provincial Overview of Community-Based Organizational Supports for Older Adults Living with HIV in British Columbia. 29th Annual Canadian Conference on HIV/AIDS (CAHR). April 30 – May 3, 2020. Quebec City, QC, Canada.</p>
+<p><em>Skakoon-Sparling S</em>, Sang S, Card KG, <strong>Marziali ME</strong>, Lachowsky NJ, Moore D, Hogg RS, Lal A, Hart TA. Loneliness and Sexual Health Among Gay, Bisexual, and Other Men who Have Sex with Men (GBM). 29th Annual Canadian Conference on HIV/AIDS (CAHR). April 30 – May 3, 2020. Quebec City, QC, Canada.</p>
+<p><strong><em>Marziali ME</em></strong>, McLinden T, Card K, Closson K, Wang L, Trigg J, Salters K, Lima V, Parashar S, Hogg RS. The Relationship Between Social Isolation and All-Cause Mortality Among People Living with HIV in British Columbia, Canada. American Psychopathological Association (APPA) Annual Meeting. March 5-7, 2020. New York, NY, United States.</p>
+<p><em>Kibel M</em>, Wu A, Closson K, St-Jean M, <strong>Marziali M</strong>, Ni Gusti Ayu N, Salters K, McLinden T, Eyawo O, Patterson T, Moore D, Elefante J, Joe R, Barrios R, Hogg RS, Lima V. Mental Health Diagnoses in a Population-Based Cohort of People Living with HIV. 28th Annual Canadian Conference on HIV/AIDS Research (CAHR). May 9-12, 2019. Saskatoon, SK, Canada.</p>
+<p><em>Kibel M</em>, Wu A, Closson K, St-Jean M, <strong>Marziali M</strong>, Ni Gusti Ayu N, Salters K, McLinden T, Eyawo O, Patterson T, Moore D, Elefante J, Joe R, Barrios R, Hogg RS, Lima V. Mental Health Diagnoses in a Population-Based Cohort of People Living with HIV. 23rd International Workshop on HIV and Hepatitis Observational Databases International Workshop on HIV and Hepatitis Observational Databases (IWHOD) 2019. March 28-30, 2019. Athens, Greece.</p>
+<p><em>Burgess H</em>, <strong>Marziali M</strong>, Collins A, von Bischoffshausen O, Lyndon S, Stacey K, Parashar S, Hogg RS. Supportive housing for people living with HIV: a qualitative analysis of operational policies in Vancouver, Canada. Poster Presentation. North American Housing &amp; HIV Summit, Washington DC, August 2018.</p>
+<p><em>Collins AB</em>, Koehn K, von Bischoffshausen O, <strong>Marziali M</strong>, Burgess H, Salters K, Hogg RS, Parashar S. The pervasiveness of trauma: understanding the intersection of trauma and housing amongst people living in an HIV-specific housing facility. Poster Presentation. Canadian Conference on HIV/AIDS Research, Vancouver, Canada, April 2018.</p>
+<p><em>Brown NF</em>, <strong>Marziali M</strong>, Lutzke J, Foster LJ. High-throughput genetic analysis of Salmonella-host interactions. Poster Presentation. HUPO (Human Proteome Organization) annual world congress, Vancouver, British Columbia, Canada, 2015.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
