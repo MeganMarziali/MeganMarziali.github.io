@@ -1,0 +1,77 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("ny_noaa")
+
+sample_noaa = sample_n(ny_noaa, 500)
+
+noaa_clean = 
+  sample_noaa %>% 
+  janitor::clean_names() %>% 
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>% 
+  mutate(
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    snow_mm = snow,
+    snow = round(snow_mm * 0.03937 * 4) / 4,
+    prcp_mm = prcp,
+    prcp = round(prcp_mm * 0.03937 * 4) / 4)
+  
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scatter plot
+
+```{r}
+noaa_clean %>% 
+  drop_na(tmax) %>% 
+  mutate(text_label = str_c("Max temp: ", tmax, "\nMin temp: ", tmin)) %>%
+  plot_ly(x = ~tmax, y = ~tmin, color = ~year,
+          alpha = 0.7, type = "scatter", 
+          mode = "markers", colors = "viridis",
+          text = ~text_label)
+```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Bar chart
+
+```{r}
+noaa_clean %>% 
+  drop_na(year) %>% 
+  count(year) %>% 
+  mutate(year = as.factor(year)) %>% 
+  plot_ly(x = ~year, y = ~n, color = ~year,
+         type = "bar", colors = "viridis")
+```
+
+### Box plot
+
+```{r}
+noaa_clean %>% 
+  drop_na(tmax) %>% 
+  select(year, month, tmax) %>% 
+  mutate(year = as.factor(year)) %>% 
+  plot_ly(x = ~year, y = ~tmax, color = ~year,
+          type = "box", colors = "viridis")
+```
+
