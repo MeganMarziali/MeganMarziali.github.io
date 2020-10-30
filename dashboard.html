@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dashboard</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="dashboard.html">Dashboard</a>
+</li>
+<li>
+  <a href="mailto:&lt;mem2371@cumc.columbia.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/MeganMarziali/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://twitter.com/marzialimegan/">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dashboard</h1>
+
+</div>
+
+
+<pre class="r"><code>data(&quot;ny_noaa&quot;)
+
+sample_noaa = sample_n(ny_noaa, 500)
+
+noaa_clean = 
+  sample_noaa %&gt;% 
+  janitor::clean_names() %&gt;% 
+  separate(date, into = c(&quot;year&quot;, &quot;month&quot;, &quot;day&quot;), convert = TRUE) %&gt;% 
+  mutate(
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    snow_mm = snow,
+    snow = round(snow_mm * 0.03937 * 4) / 4,
+    prcp_mm = prcp,
+    prcp = round(prcp_mm * 0.03937 * 4) / 4)</code></pre>
+<div id="column" class="section level2" data-width="650">
+<h2>Column</h2>
+<div id="scatter-plot" class="section level3">
+<h3>Scatter plot</h3>
+<pre class="r"><code>noaa_clean %&gt;% 
+  drop_na(tmax) %&gt;% 
+  mutate(text_label = str_c(&quot;Max temp: &quot;, tmax, &quot;\nMin temp: &quot;, tmin)) %&gt;%
+  plot_ly(x = ~tmax, y = ~tmin, color = ~year,
+          alpha = 0.7, type = &quot;scatter&quot;, 
+          mode = &quot;markers&quot;, colors = &quot;viridis&quot;,
+          text = ~text_label)</code></pre>
+<pre><code>## Warning: `arrange_()` is deprecated as of dplyr 0.7.0.
+## Please use `arrange()` instead.
+## See vignette(&#39;programming&#39;) for more help
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<div id="htmlwidget-93a65a6740802665c140" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-93a65a6740802665c140">{"x":{"visdat":{"ff7aead9e86":["function () ","plotlyVisDat"]},"cur_data":"ff7aead9e86","attrs":{"ff7aead9e86":{"x":{},"y":{},"mode":"markers","text":{},"color":{},"colors":"viridis","alpha":0.7,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"tmax"},"yaxis":{"domain":[0,1],"automargin":true,"title":"tmin"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[25,13.3,13.9,2.8,6.7,29.4,25,7.2,11.1,11.7,28.3,20.6,5.6,13.3,7.2,27.2,25.6,21.1,24.4,27.2,23.3,19.4,24.4,23.3,2.2,-1.1,4.4,30,27.2,8.9,8.3,23.9,28.3,1.7,15,2.8,1.1,0.6,0.6,21.7,0,16.7,15.6,17.8,22.8,18.9,6.7,-3.3,24.4,25,25.6,23.9,25.6,-5.6,-3.3,8.3,23.9,14.4,26.7,-0.6,10,5.6,21.7,21.1,8.3,19.4,30,4.4,19.4,18.9,26.1,25.6,22.8,2.2,2.8,7.8,5.6,15,17.2,11.7,24.4,21.7,25.6,17.2,30,9.4,11.7,13.3,27.8,1.7,29.4,23.3,6.7,19.4,12.8,11.1,6.7,27.2,-8.9,16.7,0.6,25.6,20,23.9,18.3,21.7,20,29.4,9.4,3.9,28.3,28.9,-3.9,26.7,0.6,-2.2,8.9,9.4,11.7,26.1,10,13.9,2.8,3.3,4.4,0.6,1.1,12.8,22.8,28.9,3.3,31.7,30.6,21.7,26.1,-3.3,29.4,-2.2,3.3,0,26.1,13.9,12.2,16.7,22.8,-0.6,16.1,5.6,11.7,3.9,21.1,10,22.8,17.8,14.4,22.8,12.2,20,21.7,3.3,5,12.2,18.9,-7.2,2.2,5.6,4.4,7.8,30.6,5,22.2,28.3,20.6,20,35.6,1.7,-3.3,18.3,4.4,-2.8,21.1,25.6,19.4,23.9,18.9,25.6,2.2,7.8,0,7.2,25,6.7,28.3,6.7,5.6,24.4,27.2,20.6,18.3,22.8,12.8,27.2,23.9,28.9,27.2,20.6,29.4,20,15.6,-4.4,5,3.3,22.2,23.9,11.7,1.7,3.3,-11.7,2.8,25.6,-1.1,7.2,22.8,26.1,13.3,11.1,2.2,1.1,1.1,11.1,-6.1,4.4,13.3,3.9,16.7,31.7,22.8,10.6,10,6.1,13.3,24.4,23.3,-1.7,27.2,6.7,22.2,19.4,17.2,9.4,21.1,26.7,12.8,22.8,2.8,18.3,7.8,17.8,24.4,10.6,-3.3,-1.1],"y":[19.4,1.7,3.9,-10,-8.9,11.7,14.4,2.8,3.3,-11.7,13.3,10.6,-1.7,0.6,2.2,10.6,10.6,4.4,15.6,12.2,11.7,5.6,9.4,9.4,-2.2,-3.9,-6.1,11.1,12.8,-7.2,0.6,10.6,18.3,-2.2,5,-8.3,-6.7,-6.7,-6.7,8.9,-5.6,5.6,2.2,4.4,11.1,2.8,5,-9.4,11.7,8.3,2.2,12.8,15,-21.7,-21.1,-2.2,9.4,1.7,11.7,-10.6,3.3,-1.7,12.8,5,-1.7,5.6,18.3,2.2,-0.6,12.2,11.7,21.1,13.3,-3.8,-1.1,3.9,-3.9,3.9,-0.6,-2.2,13.3,-1.7,12.8,5,21.1,6.1,-0.6,-3.3,15,-8.3,10.6,17.2,-3.9,10,2.2,-3.9,-2.8,15,-17.8,0.6,-1.7,14.4,11.1,3.9,12.8,10,10,21.7,0.6,-1.7,8.9,16.1,-11.1,17.8,-5,-8.9,2.2,1.1,-1.7,13.9,1.1,10.6,-12.8,0,-3.9,-6.1,-2.8,1.1,11.1,16.7,-12.2,22.2,20,13.9,9.4,-7.8,12.8,-11.1,-4.4,-7.8,12.8,3.3,4.4,13.9,12.8,-11.7,3.3,-2.2,-1.1,-7.2,9.4,-6.7,13.3,11.7,6.1,10.6,9.4,8.9,14.4,-8.9,-6.7,8.9,15.6,-14.4,-3.9,-9.4,-2.2,6.1,12.2,1.1,6.7,12.8,7.2,11.7,21.7,-7.2,-10,5,-1.7,-5,9.4,18.3,12.2,15.1,12.2,12.2,-0.6,-5,-2.8,-6.7,11.1,0.6,11.7,0.6,-8.3,10.6,21.1,4.4,11.1,3.9,7.2,7.2,7.2,18.3,7.8,9.4,11.1,6.1,7.2,-26.7,0,-2.2,2.2,3.3,-2.2,-11.7,-0.6,-14.4,-4.4,20,-13.9,0,11.1,21.7,7.2,3.3,-7.2,-8.3,-5,-2.8,-17.8,-2.2,-6.1,-12.8,7.2,22.2,12.8,1.7,-3.9,0.6,-2.8,10,11.7,-7.2,12.2,-2.2,16.7,-1.7,1.1,-6.1,8.3,15.6,7.8,12.8,0,5,1.7,10,16.1,-1.1,-6.7,-6.7],"mode":"markers","text":["Max temp: 25<br />Min temp: 19.4","Max temp: 13.3<br />Min temp: 1.7","Max temp: 13.9<br />Min temp: 3.9","Max temp: 2.8<br />Min temp: -10","Max temp: 6.7<br />Min temp: -8.9","Max temp: 29.4<br />Min temp: 11.7","Max temp: 25<br />Min temp: 14.4","Max temp: 7.2<br />Min temp: 2.8","Max temp: 11.1<br />Min temp: 3.3","Max temp: 11.7<br />Min temp: -11.7","Max temp: 28.3<br />Min temp: 13.3","Max temp: 20.6<br />Min temp: 10.6","Max temp: 5.6<br />Min temp: -1.7","Max temp: 13.3<br />Min temp: 0.6","Max temp: 7.2<br />Min temp: 2.2","Max temp: 27.2<br />Min temp: 10.6","Max temp: 25.6<br />Min temp: 10.6","Max temp: 21.1<br />Min temp: 4.4","Max temp: 24.4<br />Min temp: 15.6","Max temp: 27.2<br />Min temp: 12.2","Max temp: 23.3<br />Min temp: 11.7","Max temp: 19.4<br />Min temp: 5.6","Max temp: 24.4<br />Min temp: 9.4","Max temp: 23.3<br />Min temp: 9.4","Max temp: 2.2<br />Min temp: -2.2","Max temp: -1.1<br />Min temp: -3.9","Max temp: 4.4<br />Min temp: -6.1","Max temp: 30<br />Min temp: 11.1","Max temp: 27.2<br />Min temp: 12.8","Max temp: 8.9<br />Min temp: -7.2","Max temp: 8.3<br />Min temp: 0.6","Max temp: 23.9<br />Min temp: 10.6","Max temp: 28.3<br />Min temp: 18.3","Max temp: 1.7<br />Min temp: -2.2","Max temp: 15<br />Min temp: 5","Max temp: 2.8<br />Min temp: -8.3","Max temp: 1.1<br />Min temp: -6.7","Max temp: 0.6<br />Min temp: -6.7","Max temp: 0.6<br />Min temp: -6.7","Max temp: 21.7<br />Min temp: 8.9","Max temp: 0<br />Min temp: -5.6","Max temp: 16.7<br />Min temp: 5.6","Max temp: 15.6<br />Min temp: 2.2","Max temp: 17.8<br />Min temp: 4.4","Max temp: 22.8<br />Min temp: 11.1","Max temp: 18.9<br />Min temp: 2.8","Max temp: 6.7<br />Min temp: 5","Max temp: -3.3<br />Min temp: -9.4","Max temp: 24.4<br />Min temp: 11.7","Max temp: 25<br />Min temp: 8.3","Max temp: 25.6<br />Min temp: 2.2","Max temp: 23.9<br />Min temp: 12.8","Max temp: 25.6<br />Min temp: 15","Max temp: -5.6<br />Min temp: -21.7","Max temp: -3.3<br />Min temp: -21.1","Max temp: 8.3<br />Min temp: -2.2","Max temp: 23.9<br />Min temp: 9.4","Max temp: 14.4<br />Min temp: 1.7","Max temp: 26.7<br />Min temp: 11.7","Max temp: -0.6<br />Min temp: -10.6","Max temp: 10<br />Min temp: 3.3","Max temp: 5.6<br />Min temp: -1.7","Max temp: 21.7<br />Min temp: 12.8","Max temp: 21.1<br />Min temp: 5","Max temp: 8.3<br />Min temp: -1.7","Max temp: 19.4<br />Min temp: 5.6","Max temp: 30<br />Min temp: 18.3","Max temp: 4.4<br />Min temp: 2.2","Max temp: 19.4<br />Min temp: -0.6","Max temp: 18.9<br />Min temp: 12.2","Max temp: 26.1<br />Min temp: 11.7","Max temp: 25.6<br />Min temp: 21.1","Max temp: 22.8<br />Min temp: 13.3","Max temp: 2.2<br />Min temp: -3.8","Max temp: 2.8<br />Min temp: -1.1","Max temp: 7.8<br />Min temp: 3.9","Max temp: 5.6<br />Min temp: -3.9","Max temp: 15<br />Min temp: 3.9","Max temp: 17.2<br />Min temp: -0.6","Max temp: 11.7<br />Min temp: -2.2","Max temp: 24.4<br />Min temp: 13.3","Max temp: 21.7<br />Min temp: -1.7","Max temp: 25.6<br />Min temp: 12.8","Max temp: 17.2<br />Min temp: 5","Max temp: 30<br />Min temp: 21.1","Max temp: 9.4<br />Min temp: 6.1","Max temp: 11.7<br />Min temp: -0.6","Max temp: 13.3<br />Min temp: -3.3","Max temp: 27.8<br />Min temp: 15","Max temp: 1.7<br />Min temp: -8.3","Max temp: 29.4<br />Min temp: 10.6","Max temp: 23.3<br />Min temp: 17.2","Max temp: 6.7<br />Min temp: -3.9","Max temp: 19.4<br />Min temp: 10","Max temp: 12.8<br />Min temp: 2.2","Max temp: 11.1<br />Min temp: -3.9","Max temp: 6.7<br />Min temp: -2.8","Max temp: 27.2<br />Min temp: 15","Max temp: -8.9<br />Min temp: -17.8","Max temp: 16.7<br />Min temp: 0.6","Max temp: 0.6<br />Min temp: -1.7","Max temp: 25.6<br />Min temp: 14.4","Max temp: 20<br />Min temp: 11.1","Max temp: 23.9<br />Min temp: 3.9","Max temp: 18.3<br />Min temp: 12.8","Max temp: 21.7<br />Min temp: 10","Max temp: 20<br />Min temp: 10","Max temp: 29.4<br />Min temp: 21.7","Max temp: 9.4<br />Min temp: 0.6","Max temp: 3.9<br />Min temp: -1.7","Max temp: 28.3<br />Min temp: 8.9","Max temp: 28.9<br />Min temp: 16.1","Max temp: -3.9<br />Min temp: -11.1","Max temp: 26.7<br />Min temp: 17.8","Max temp: 0.6<br />Min temp: -5","Max temp: -2.2<br />Min temp: -8.9","Max temp: 8.9<br />Min temp: 2.2","Max temp: 9.4<br />Min temp: 1.1","Max temp: 11.7<br />Min temp: -1.7","Max temp: 26.1<br />Min temp: 13.9","Max temp: 10<br />Min temp: 1.1","Max temp: 13.9<br />Min temp: 10.6","Max temp: 2.8<br />Min temp: -12.8","Max temp: 3.3<br />Min temp: 0","Max temp: 4.4<br />Min temp: -3.9","Max temp: 0.6<br />Min temp: -6.1","Max temp: 1.1<br />Min temp: -2.8","Max temp: 12.8<br />Min temp: 1.1","Max temp: 22.8<br />Min temp: 11.1","Max temp: 28.9<br />Min temp: 16.7","Max temp: 3.3<br />Min temp: -12.2","Max temp: 31.7<br />Min temp: 22.2","Max temp: 30.6<br />Min temp: 20","Max temp: 21.7<br />Min temp: 13.9","Max temp: 26.1<br />Min temp: 9.4","Max temp: -3.3<br />Min temp: -7.8","Max temp: 29.4<br />Min temp: 12.8","Max temp: -2.2<br />Min temp: -11.1","Max temp: 3.3<br />Min temp: -4.4","Max temp: 0<br />Min temp: -7.8","Max temp: 26.1<br />Min temp: 12.8","Max temp: 13.9<br />Min temp: 3.3","Max temp: 12.2<br />Min temp: 4.4","Max temp: 16.7<br />Min temp: 13.9","Max temp: 22.8<br />Min temp: 12.8","Max temp: -0.6<br />Min temp: -11.7","Max temp: 16.1<br />Min temp: 3.3","Max temp: 5.6<br />Min temp: -2.2","Max temp: 11.7<br />Min temp: -1.1","Max temp: 3.9<br />Min temp: -7.2","Max temp: 21.1<br />Min temp: 9.4","Max temp: 10<br />Min temp: -6.7","Max temp: 22.8<br />Min temp: 13.3","Max temp: 17.8<br />Min temp: 11.7","Max temp: 14.4<br />Min temp: 6.1","Max temp: 22.8<br />Min temp: 10.6","Max temp: 12.2<br />Min temp: 9.4","Max temp: 20<br />Min temp: 8.9","Max temp: 21.7<br />Min temp: 14.4","Max temp: 3.3<br />Min temp: -8.9","Max temp: 5<br />Min temp: -6.7","Max temp: 12.2<br />Min temp: 8.9","Max temp: 18.9<br />Min temp: 15.6","Max temp: -7.2<br />Min temp: -14.4","Max temp: 2.2<br />Min temp: -3.9","Max temp: 5.6<br />Min temp: -9.4","Max temp: 4.4<br />Min temp: -2.2","Max temp: 7.8<br />Min temp: 6.1","Max temp: 30.6<br />Min temp: 12.2","Max temp: 5<br />Min temp: 1.1","Max temp: 22.2<br />Min temp: 6.7","Max temp: 28.3<br />Min temp: 12.8","Max temp: 20.6<br />Min temp: 7.2","Max temp: 20<br />Min temp: 11.7","Max temp: 35.6<br />Min temp: 21.7","Max temp: 1.7<br />Min temp: -7.2","Max temp: -3.3<br />Min temp: -10","Max temp: 18.3<br />Min temp: 5","Max temp: 4.4<br />Min temp: -1.7","Max temp: -2.8<br />Min temp: -5","Max temp: 21.1<br />Min temp: 9.4","Max temp: 25.6<br />Min temp: 18.3","Max temp: 19.4<br />Min temp: 12.2","Max temp: 23.9<br />Min temp: 15.1","Max temp: 18.9<br />Min temp: 12.2","Max temp: 25.6<br />Min temp: 12.2","Max temp: 2.2<br />Min temp: -0.6","Max temp: 7.8<br />Min temp: -5","Max temp: 0<br />Min temp: -2.8","Max temp: 7.2<br />Min temp: -6.7","Max temp: 25<br />Min temp: 11.1","Max temp: 6.7<br />Min temp: 0.6","Max temp: 28.3<br />Min temp: 11.7","Max temp: 6.7<br />Min temp: 0.6","Max temp: 5.6<br />Min temp: -8.3","Max temp: 24.4<br />Min temp: 10.6","Max temp: 27.2<br />Min temp: 21.1","Max temp: 20.6<br />Min temp: 4.4","Max temp: 18.3<br />Min temp: 11.1","Max temp: 22.8<br />Min temp: 3.9","Max temp: 12.8<br />Min temp: 7.2","Max temp: 27.2<br />Min temp: 7.2","Max temp: 23.9<br />Min temp: 7.2","Max temp: 28.9<br />Min temp: 18.3","Max temp: 27.2<br />Min temp: 7.8","Max temp: 20.6<br />Min temp: 9.4","Max temp: 29.4<br />Min temp: 11.1","Max temp: 20<br />Min temp: 6.1","Max temp: 15.6<br />Min temp: 7.2","Max temp: -4.4<br />Min temp: -26.7","Max temp: 5<br />Min temp: 0","Max temp: 3.3<br />Min temp: -2.2","Max temp: 22.2<br />Min temp: 2.2","Max temp: 23.9<br />Min temp: 3.3","Max temp: 11.7<br />Min temp: -2.2","Max temp: 1.7<br />Min temp: -11.7","Max temp: 3.3<br />Min temp: -0.6","Max temp: -11.7<br />Min temp: -14.4","Max temp: 2.8<br />Min temp: -4.4","Max temp: 25.6<br />Min temp: 20","Max temp: -1.1<br />Min temp: -13.9","Max temp: 7.2<br />Min temp: 0","Max temp: 22.8<br />Min temp: 11.1","Max temp: 26.1<br />Min temp: 21.7","Max temp: 13.3<br />Min temp: 7.2","Max temp: 11.1<br />Min temp: 3.3","Max temp: 2.2<br />Min temp: -7.2","Max temp: 1.1<br />Min temp: -8.3","Max temp: 1.1<br />Min temp: -5","Max temp: 11.1<br />Min temp: -2.8","Max temp: -6.1<br />Min temp: -17.8","Max temp: 4.4<br />Min temp: -2.2","Max temp: 13.3<br />Min temp: -6.1","Max temp: 3.9<br />Min temp: -12.8","Max temp: 16.7<br />Min temp: 7.2","Max temp: 31.7<br />Min temp: 22.2","Max temp: 22.8<br />Min temp: 12.8","Max temp: 10.6<br />Min temp: 1.7","Max temp: 10<br />Min temp: -3.9","Max temp: 6.1<br />Min temp: 0.6","Max temp: 13.3<br />Min temp: -2.8","Max temp: 24.4<br />Min temp: 10","Max temp: 23.3<br />Min temp: 11.7","Max temp: -1.7<br />Min temp: -7.2","Max temp: 27.2<br />Min temp: 12.2","Max temp: 6.7<br />Min temp: -2.2","Max temp: 22.2<br />Min temp: 16.7","Max temp: 19.4<br />Min temp: -1.7","Max temp: 17.2<br />Min temp: 1.1","Max temp: 9.4<br />Min temp: -6.1","Max temp: 21.1<br />Min temp: 8.3","Max temp: 26.7<br />Min temp: 15.6","Max temp: 12.8<br />Min temp: 7.8","Max temp: 22.8<br />Min temp: 12.8","Max temp: 2.8<br />Min temp: 0","Max temp: 18.3<br />Min temp: 5","Max temp: 7.8<br />Min temp: 1.7","Max temp: 17.8<br />Min temp: 10","Max temp: 24.4<br />Min temp: 16.1","Max temp: 10.6<br />Min temp: -1.1","Max temp: -3.3<br />Min temp: -6.7","Max temp: -1.1<br />Min temp: -6.7"],"type":"scatter","marker":{"colorbar":{"title":"year","ticklen":2},"cmin":1981,"cmax":2010,"colorscale":[["0","rgba(68,1,84,0.7)"],["0.0416666666666641","rgba(71,17,100,0.7)"],["0.083333333333336","rgba(72,31,112,0.7)"],["0.125","rgba(71,45,123,0.7)"],["0.166666666666664","rgba(68,58,131,0.7)"],["0.208333333333336","rgba(64,70,136,0.7)"],["0.25","rgba(59,82,139,0.7)"],["0.291666666666664","rgba(54,93,141,0.7)"],["0.333333333333336","rgba(49,104,142,0.7)"],["0.375","rgba(44,114,142,0.7)"],["0.416666666666664","rgba(40,124,142,0.7)"],["0.458333333333336","rgba(36,134,142,0.7)"],["0.5","rgba(33,144,141,0.7)"],["0.541666666666664","rgba(31,154,138,0.7)"],["0.583333333333336","rgba(32,164,134,0.7)"],["0.625","rgba(39,173,129,0.7)"],["0.666666666666664","rgba(53,183,121,0.7)"],["0.708333333333336","rgba(71,193,110,0.7)"],["0.75","rgba(93,200,99,0.7)"],["0.791666666666664","rgba(117,208,84,0.7)"],["0.833333333333336","rgba(143,214,68,0.7)"],["0.875","rgba(170,220,50,0.7)"],["0.916666666666664","rgba(199,224,32,0.7)"],["0.958333333333336","rgba(227,228,24,0.7)"],["1","rgba(253,231,37,0.7)"]],"showscale":false,"color":[2008,1984,1993,1992,1998,2005,1986,1992,1985,2004,1996,1997,1994,2002,1981,1982,2004,2004,2000,1994,2000,2008,1995,1986,2003,2003,2005,2005,2010,1988,1989,1998,2009,1995,1988,1986,2008,1998,2006,2007,2004,1986,2005,1999,1983,1995,1983,1988,2006,2008,2005,1989,2006,1982,1989,1981,2004,1984,1998,2001,1987,1994,1999,1989,2007,1981,2005,1990,2007,1986,2002,1984,1994,2006,1988,2006,1981,1989,2002,1983,2009,2000,1998,2002,1990,2006,2009,2010,1993,2001,1981,2006,1987,2006,1996,2007,2004,1993,2010,1993,1996,1994,1985,1987,1991,1988,1981,1981,1992,1993,1986,1995,1999,2003,1984,1997,1990,2004,2007,1993,1981,1982,2001,2004,1993,1995,2001,1994,2002,2001,1997,1991,1995,1984,1987,2008,1981,2005,1995,1996,2007,1982,1989,1992,1986,2010,2001,2006,1981,1992,1999,1986,1985,2009,1986,2006,1995,2000,1991,1995,1987,2010,1996,2010,1987,2010,2009,2005,1983,2004,2007,2003,2009,1990,1994,1997,1986,2002,1994,1993,2009,1995,2005,2007,1981,1984,2010,1997,1995,1984,1983,2010,1998,2007,1991,1987,1984,1994,2001,2008,1989,1997,2000,2009,1987,1986,1988,1984,1993,2009,1992,1999,2002,2008,1993,1983,1983,1994,2008,2006,1995,1989,1981,1999,1990,1996,1987,1992,1989,2009,1995,1991,1984,2007,1986,2007,2006,2007,1982,2005,2004,2010,2004,2000,1994,2002,1988,1991,2007,2008,2008,2002,1989,2002,1982,1984,1993,2000,2000,2001,2000,1988],"line":{"colorbar":{"title":"","ticklen":2},"cmin":1981,"cmax":2010,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666641","rgba(71,17,100,1)"],["0.083333333333336","rgba(72,31,112,1)"],["0.125","rgba(71,45,123,1)"],["0.166666666666664","rgba(68,58,131,1)"],["0.208333333333336","rgba(64,70,136,1)"],["0.25","rgba(59,82,139,1)"],["0.291666666666664","rgba(54,93,141,1)"],["0.333333333333336","rgba(49,104,142,1)"],["0.375","rgba(44,114,142,1)"],["0.416666666666664","rgba(40,124,142,1)"],["0.458333333333336","rgba(36,134,142,1)"],["0.5","rgba(33,144,141,1)"],["0.541666666666664","rgba(31,154,138,1)"],["0.583333333333336","rgba(32,164,134,1)"],["0.625","rgba(39,173,129,1)"],["0.666666666666664","rgba(53,183,121,1)"],["0.708333333333336","rgba(71,193,110,1)"],["0.75","rgba(93,200,99,1)"],["0.791666666666664","rgba(117,208,84,1)"],["0.833333333333336","rgba(143,214,68,1)"],["0.875","rgba(170,220,50,1)"],["0.916666666666664","rgba(199,224,32,1)"],["0.958333333333336","rgba(227,228,24,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[2008,1984,1993,1992,1998,2005,1986,1992,1985,2004,1996,1997,1994,2002,1981,1982,2004,2004,2000,1994,2000,2008,1995,1986,2003,2003,2005,2005,2010,1988,1989,1998,2009,1995,1988,1986,2008,1998,2006,2007,2004,1986,2005,1999,1983,1995,1983,1988,2006,2008,2005,1989,2006,1982,1989,1981,2004,1984,1998,2001,1987,1994,1999,1989,2007,1981,2005,1990,2007,1986,2002,1984,1994,2006,1988,2006,1981,1989,2002,1983,2009,2000,1998,2002,1990,2006,2009,2010,1993,2001,1981,2006,1987,2006,1996,2007,2004,1993,2010,1993,1996,1994,1985,1987,1991,1988,1981,1981,1992,1993,1986,1995,1999,2003,1984,1997,1990,2004,2007,1993,1981,1982,2001,2004,1993,1995,2001,1994,2002,2001,1997,1991,1995,1984,1987,2008,1981,2005,1995,1996,2007,1982,1989,1992,1986,2010,2001,2006,1981,1992,1999,1986,1985,2009,1986,2006,1995,2000,1991,1995,1987,2010,1996,2010,1987,2010,2009,2005,1983,2004,2007,2003,2009,1990,1994,1997,1986,2002,1994,1993,2009,1995,2005,2007,1981,1984,2010,1997,1995,1984,1983,2010,1998,2007,1991,1987,1984,1994,2001,2008,1989,1997,2000,2009,1987,1986,1988,1984,1993,2009,1992,1999,2002,2008,1993,1983,1983,1994,2008,2006,1995,1989,1981,1999,1990,1996,1987,1992,1989,2009,1995,1991,1984,2007,1986,2007,2006,2007,1982,2005,2004,2010,2004,2000,1994,2002,1988,1991,2007,2008,2008,2002,1989,2002,1982,1984,1993,2000,2000,2001,2000,1988]}},"xaxis":"x","yaxis":"y","frame":null},{"x":[-11.7,35.6],"y":[-26.7,22.2],"type":"scatter","mode":"markers","opacity":0,"hoverinfo":"none","showlegend":false,"marker":{"colorbar":{"title":"year","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"cmin":1981,"cmax":2010,"colorscale":[["0","rgba(68,1,84,0.7)"],["0.0416666666666641","rgba(71,17,100,0.7)"],["0.083333333333336","rgba(72,31,112,0.7)"],["0.125","rgba(71,45,123,0.7)"],["0.166666666666664","rgba(68,58,131,0.7)"],["0.208333333333336","rgba(64,70,136,0.7)"],["0.25","rgba(59,82,139,0.7)"],["0.291666666666664","rgba(54,93,141,0.7)"],["0.333333333333336","rgba(49,104,142,0.7)"],["0.375","rgba(44,114,142,0.7)"],["0.416666666666664","rgba(40,124,142,0.7)"],["0.458333333333336","rgba(36,134,142,0.7)"],["0.5","rgba(33,144,141,0.7)"],["0.541666666666664","rgba(31,154,138,0.7)"],["0.583333333333336","rgba(32,164,134,0.7)"],["0.625","rgba(39,173,129,0.7)"],["0.666666666666664","rgba(53,183,121,0.7)"],["0.708333333333336","rgba(71,193,110,0.7)"],["0.75","rgba(93,200,99,0.7)"],["0.791666666666664","rgba(117,208,84,0.7)"],["0.833333333333336","rgba(143,214,68,0.7)"],["0.875","rgba(170,220,50,0.7)"],["0.916666666666664","rgba(199,224,32,0.7)"],["0.958333333333336","rgba(227,228,24,0.7)"],["1","rgba(253,231,37,0.7)"]],"showscale":true,"color":[1981,2010],"line":{"color":"rgba(255,127,14,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="column-1" class="section level2" data-width="350">
+<h2>Column</h2>
+<div id="bar-chart" class="section level3">
+<h3>Bar chart</h3>
+<pre class="r"><code>noaa_clean %&gt;% 
+  drop_na(year) %&gt;% 
+  count(year) %&gt;% 
+  mutate(year = as.factor(year)) %&gt;% 
+  plot_ly(x = ~year, y = ~n, color = ~year,
+         type = &quot;bar&quot;, colors = &quot;viridis&quot;)</code></pre>
+<div id="htmlwidget-26b2d6770cdd4481f7b6" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-26b2d6770cdd4481f7b6">{"x":{"visdat":{"ff7ad4edcfe":["function () ","plotlyVisDat"]},"cur_data":"ff7ad4edcfe","attrs":{"ff7ad4edcfe":{"x":{},"y":{},"color":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"year","type":"category","categoryorder":"array","categoryarray":["1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"n"},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["1981"],"y":[14],"type":"bar","name":"1981","marker":{"color":"rgba(68,1,84,1)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,1)"},"error_y":{"color":"rgba(68,1,84,1)"},"error_x":{"color":"rgba(68,1,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1982"],"y":[17],"type":"bar","name":"1982","marker":{"color":"rgba(71,14,97,1)","line":{"color":"rgba(71,14,97,1)"}},"textfont":{"color":"rgba(71,14,97,1)"},"error_y":{"color":"rgba(71,14,97,1)"},"error_x":{"color":"rgba(71,14,97,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1983"],"y":[16],"type":"bar","name":"1983","marker":{"color":"rgba(72,27,109,1)","line":{"color":"rgba(72,27,109,1)"}},"textfont":{"color":"rgba(72,27,109,1)"},"error_y":{"color":"rgba(72,27,109,1)"},"error_x":{"color":"rgba(72,27,109,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1984"],"y":[19],"type":"bar","name":"1984","marker":{"color":"rgba(72,37,118,1)","line":{"color":"rgba(72,37,118,1)"}},"textfont":{"color":"rgba(72,37,118,1)"},"error_y":{"color":"rgba(72,37,118,1)"},"error_x":{"color":"rgba(72,37,118,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1985"],"y":[15],"type":"bar","name":"1985","marker":{"color":"rgba(70,48,126,1)","line":{"color":"rgba(70,48,126,1)"}},"textfont":{"color":"rgba(70,48,126,1)"},"error_y":{"color":"rgba(70,48,126,1)"},"error_x":{"color":"rgba(70,48,126,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1986"],"y":[21],"type":"bar","name":"1986","marker":{"color":"rgba(68,59,132,1)","line":{"color":"rgba(68,59,132,1)"}},"textfont":{"color":"rgba(68,59,132,1)"},"error_y":{"color":"rgba(68,59,132,1)"},"error_x":{"color":"rgba(68,59,132,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1987"],"y":[13],"type":"bar","name":"1987","marker":{"color":"rgba(64,70,136,1)","line":{"color":"rgba(64,70,136,1)"}},"textfont":{"color":"rgba(64,70,136,1)"},"error_y":{"color":"rgba(64,70,136,1)"},"error_x":{"color":"rgba(64,70,136,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1988"],"y":[15],"type":"bar","name":"1988","marker":{"color":"rgba(60,80,139,1)","line":{"color":"rgba(60,80,139,1)"}},"textfont":{"color":"rgba(60,80,139,1)"},"error_y":{"color":"rgba(60,80,139,1)"},"error_x":{"color":"rgba(60,80,139,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1989"],"y":[21],"type":"bar","name":"1989","marker":{"color":"rgba(56,89,140,1)","line":{"color":"rgba(56,89,140,1)"}},"textfont":{"color":"rgba(56,89,140,1)"},"error_y":{"color":"rgba(56,89,140,1)"},"error_x":{"color":"rgba(56,89,140,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1990"],"y":[12],"type":"bar","name":"1990","marker":{"color":"rgba(51,98,141,1)","line":{"color":"rgba(51,98,141,1)"}},"textfont":{"color":"rgba(51,98,141,1)"},"error_y":{"color":"rgba(51,98,141,1)"},"error_x":{"color":"rgba(51,98,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1991"],"y":[12],"type":"bar","name":"1991","marker":{"color":"rgba(47,107,142,1)","line":{"color":"rgba(47,107,142,1)"}},"textfont":{"color":"rgba(47,107,142,1)"},"error_y":{"color":"rgba(47,107,142,1)"},"error_x":{"color":"rgba(47,107,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1992"],"y":[17],"type":"bar","name":"1992","marker":{"color":"rgba(44,115,142,1)","line":{"color":"rgba(44,115,142,1)"}},"textfont":{"color":"rgba(44,115,142,1)"},"error_y":{"color":"rgba(44,115,142,1)"},"error_x":{"color":"rgba(44,115,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1993"],"y":[14],"type":"bar","name":"1993","marker":{"color":"rgba(40,124,142,1)","line":{"color":"rgba(40,124,142,1)"}},"textfont":{"color":"rgba(40,124,142,1)"},"error_y":{"color":"rgba(40,124,142,1)"},"error_x":{"color":"rgba(40,124,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1994"],"y":[15],"type":"bar","name":"1994","marker":{"color":"rgba(37,131,142,1)","line":{"color":"rgba(37,131,142,1)"}},"textfont":{"color":"rgba(37,131,142,1)"},"error_y":{"color":"rgba(37,131,142,1)"},"error_x":{"color":"rgba(37,131,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1995"],"y":[17],"type":"bar","name":"1995","marker":{"color":"rgba(34,140,141,1)","line":{"color":"rgba(34,140,141,1)"}},"textfont":{"color":"rgba(34,140,141,1)"},"error_y":{"color":"rgba(34,140,141,1)"},"error_x":{"color":"rgba(34,140,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1996"],"y":[14],"type":"bar","name":"1996","marker":{"color":"rgba(31,148,140,1)","line":{"color":"rgba(31,148,140,1)"}},"textfont":{"color":"rgba(31,148,140,1)"},"error_y":{"color":"rgba(31,148,140,1)"},"error_x":{"color":"rgba(31,148,140,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1997"],"y":[16],"type":"bar","name":"1997","marker":{"color":"rgba(30,157,137,1)","line":{"color":"rgba(30,157,137,1)"}},"textfont":{"color":"rgba(30,157,137,1)"},"error_y":{"color":"rgba(30,157,137,1)"},"error_x":{"color":"rgba(30,157,137,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1998"],"y":[10],"type":"bar","name":"1998","marker":{"color":"rgba(32,164,134,1)","line":{"color":"rgba(32,164,134,1)"}},"textfont":{"color":"rgba(32,164,134,1)"},"error_y":{"color":"rgba(32,164,134,1)"},"error_x":{"color":"rgba(32,164,134,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["1999"],"y":[14],"type":"bar","name":"1999","marker":{"color":"rgba(38,173,129,1)","line":{"color":"rgba(38,173,129,1)"}},"textfont":{"color":"rgba(38,173,129,1)"},"error_y":{"color":"rgba(38,173,129,1)"},"error_x":{"color":"rgba(38,173,129,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2000"],"y":[15],"type":"bar","name":"2000","marker":{"color":"rgba(49,181,123,1)","line":{"color":"rgba(49,181,123,1)"}},"textfont":{"color":"rgba(49,181,123,1)"},"error_y":{"color":"rgba(49,181,123,1)"},"error_x":{"color":"rgba(49,181,123,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2001"],"y":[12],"type":"bar","name":"2001","marker":{"color":"rgba(63,188,115,1)","line":{"color":"rgba(63,188,115,1)"}},"textfont":{"color":"rgba(63,188,115,1)"},"error_y":{"color":"rgba(63,188,115,1)"},"error_x":{"color":"rgba(63,188,115,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2002"],"y":[14],"type":"bar","name":"2002","marker":{"color":"rgba(79,196,106,1)","line":{"color":"rgba(79,196,106,1)"}},"textfont":{"color":"rgba(79,196,106,1)"},"error_y":{"color":"rgba(79,196,106,1)"},"error_x":{"color":"rgba(79,196,106,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2003"],"y":[6],"type":"bar","name":"2003","marker":{"color":"rgba(97,202,96,1)","line":{"color":"rgba(97,202,96,1)"}},"textfont":{"color":"rgba(97,202,96,1)"},"error_y":{"color":"rgba(97,202,96,1)"},"error_x":{"color":"rgba(97,202,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2004"],"y":[24],"type":"bar","name":"2004","marker":{"color":"rgba(117,208,84,1)","line":{"color":"rgba(117,208,84,1)"}},"textfont":{"color":"rgba(117,208,84,1)"},"error_y":{"color":"rgba(117,208,84,1)"},"error_x":{"color":"rgba(117,208,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2005"],"y":[15],"type":"bar","name":"2005","marker":{"color":"rgba(139,214,70,1)","line":{"color":"rgba(139,214,70,1)"}},"textfont":{"color":"rgba(139,214,70,1)"},"error_y":{"color":"rgba(139,214,70,1)"},"error_x":{"color":"rgba(139,214,70,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2006"],"y":[19],"type":"bar","name":"2006","marker":{"color":"rgba(162,218,55,1)","line":{"color":"rgba(162,218,55,1)"}},"textfont":{"color":"rgba(162,218,55,1)"},"error_y":{"color":"rgba(162,218,55,1)"},"error_x":{"color":"rgba(162,218,55,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2007"],"y":[22],"type":"bar","name":"2007","marker":{"color":"rgba(185,222,40,1)","line":{"color":"rgba(185,222,40,1)"}},"textfont":{"color":"rgba(185,222,40,1)"},"error_y":{"color":"rgba(185,222,40,1)"},"error_x":{"color":"rgba(185,222,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2008"],"y":[20],"type":"bar","name":"2008","marker":{"color":"rgba(209,225,28,1)","line":{"color":"rgba(209,225,28,1)"}},"textfont":{"color":"rgba(209,225,28,1)"},"error_y":{"color":"rgba(209,225,28,1)"},"error_x":{"color":"rgba(209,225,28,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2009"],"y":[32],"type":"bar","name":"2009","marker":{"color":"rgba(232,228,25,1)","line":{"color":"rgba(232,228,25,1)"}},"textfont":{"color":"rgba(232,228,25,1)"},"error_y":{"color":"rgba(232,228,25,1)"},"error_x":{"color":"rgba(232,228,25,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010"],"y":[29],"type":"bar","name":"2010","marker":{"color":"rgba(253,231,37,1)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,1)"},"error_y":{"color":"rgba(253,231,37,1)"},"error_x":{"color":"rgba(253,231,37,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="box-plot" class="section level3">
+<h3>Box plot</h3>
+<pre class="r"><code>noaa_clean %&gt;% 
+  drop_na(tmax) %&gt;% 
+  select(year, month, tmax) %&gt;% 
+  mutate(year = as.factor(year)) %&gt;% 
+  plot_ly(x = ~year, y = ~tmax, color = ~year,
+          type = &quot;box&quot;, colors = &quot;viridis&quot;)</code></pre>
+<div id="htmlwidget-a73097e37f55b4999fee" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a73097e37f55b4999fee">{"x":{"visdat":{"ff7a363b8b8":["function () ","plotlyVisDat"]},"cur_data":"ff7a363b8b8","attrs":{"ff7a363b8b8":{"x":{},"y":{},"color":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"year","type":"category","categoryorder":"array","categoryarray":["1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"tmax"},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(68,1,84,0.5)","x":["1981","1981","1981","1981","1981","1981","1981","1981","1981","1981","1981","1981"],"y":[7.2,8.3,19.4,5.6,29.4,20,29.4,10,29.4,11.7,18.9,22.8],"type":"box","name":"1981","marker":{"color":"rgba(68,1,84,1)","line":{"color":"rgba(68,1,84,1)"}},"line":{"color":"rgba(68,1,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(71,14,97,0.5)","x":["1982","1982","1982","1982","1982","1982"],"y":[27.2,-5.6,13.9,13.9,10,2.8],"type":"box","name":"1982","marker":{"color":"rgba(71,14,97,1)","line":{"color":"rgba(71,14,97,1)"}},"line":{"color":"rgba(71,14,97,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(72,27,109,0.5)","x":["1983","1983","1983","1983","1983","1983","1983"],"y":[22.8,6.7,11.7,30.6,25,1.7,3.3],"type":"box","name":"1983","marker":{"color":"rgba(72,27,109,1)","line":{"color":"rgba(72,27,109,1)"}},"line":{"color":"rgba(72,27,109,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(72,37,118,0.5)","x":["1984","1984","1984","1984","1984","1984","1984","1984","1984","1984","1984"],"y":[13.3,14.4,25.6,0.6,21.7,25.6,7.2,27.2,20,13.3,18.3],"type":"box","name":"1984","marker":{"color":"rgba(72,37,118,1)","line":{"color":"rgba(72,37,118,1)"}},"line":{"color":"rgba(72,37,118,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(70,48,126,0.5)","x":["1985","1985","1985"],"y":[11.1,20,22.8],"type":"box","name":"1985","marker":{"color":"rgba(70,48,126,1)","line":{"color":"rgba(70,48,126,1)"}},"line":{"color":"rgba(70,48,126,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(68,59,132,0.5)","x":["1986","1986","1986","1986","1986","1986","1986","1986","1986","1986","1986","1986"],"y":[25,23.3,2.8,16.7,18.9,28.3,22.8,10,14.4,-3.3,20.6,16.7],"type":"box","name":"1986","marker":{"color":"rgba(68,59,132,1)","line":{"color":"rgba(68,59,132,1)"}},"line":{"color":"rgba(68,59,132,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(64,70,136,0.5)","x":["1987","1987","1987","1987","1987","1987","1987","1987","1987"],"y":[10,6.7,23.9,26.1,5,2.2,24.4,27.2,2.2],"type":"box","name":"1987","marker":{"color":"rgba(64,70,136,1)","line":{"color":"rgba(64,70,136,1)"}},"line":{"color":"rgba(64,70,136,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(60,80,139,0.5)","x":["1988","1988","1988","1988","1988","1988","1988","1988"],"y":[8.9,15,-3.3,2.8,21.7,29.4,22.2,-1.1],"type":"box","name":"1988","marker":{"color":"rgba(60,80,139,1)","line":{"color":"rgba(60,80,139,1)"}},"line":{"color":"rgba(60,80,139,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(56,89,140,0.5)","x":["1989","1989","1989","1989","1989","1989","1989","1989","1989","1989"],"y":[8.3,23.9,-3.3,21.1,15,12.2,12.8,7.2,1.1,12.8],"type":"box","name":"1989","marker":{"color":"rgba(56,89,140,1)","line":{"color":"rgba(56,89,140,1)"}},"line":{"color":"rgba(56,89,140,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(51,98,141,0.5)","x":["1990","1990","1990","1990","1990"],"y":[4.4,30,8.9,20,13.3],"type":"box","name":"1990","marker":{"color":"rgba(51,98,141,1)","line":{"color":"rgba(51,98,141,1)"}},"line":{"color":"rgba(51,98,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(47,107,142,0.5)","x":["1991","1991","1991","1991","1991","1991"],"y":[18.3,31.7,21.7,5.6,4.4,19.4],"type":"box","name":"1991","marker":{"color":"rgba(47,107,142,1)","line":{"color":"rgba(47,107,142,1)"}},"line":{"color":"rgba(47,107,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(44,115,142,0.5)","x":["1992","1992","1992","1992","1992","1992","1992"],"y":[2.8,7.2,9.4,16.7,3.9,5,1.1],"type":"box","name":"1992","marker":{"color":"rgba(44,115,142,1)","line":{"color":"rgba(44,115,142,1)"}},"line":{"color":"rgba(44,115,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(40,124,142,0.5)","x":["1993","1993","1993","1993","1993","1993","1993","1993","1993","1993","1993"],"y":[13.9,27.8,27.2,16.7,3.9,26.1,4.4,-2.8,15.6,11.7,7.8],"type":"box","name":"1993","marker":{"color":"rgba(40,124,142,1)","line":{"color":"rgba(40,124,142,1)"}},"line":{"color":"rgba(40,124,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(37,131,142,0.5)","x":["1994","1994","1994","1994","1994","1994","1994","1994","1994","1994","1994"],"y":[5.6,27.2,5.6,22.8,25.6,12.8,35.6,4.4,20.6,-11.7,27.2],"type":"box","name":"1994","marker":{"color":"rgba(37,131,142,1)","line":{"color":"rgba(37,131,142,1)"}},"line":{"color":"rgba(37,131,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(34,140,141,0.5)","x":["1995","1995","1995","1995","1995","1995","1995","1995","1995","1995","1995","1995","1995"],"y":[24.4,1.7,18.9,28.9,0.6,30.6,3.3,12.2,3.3,25.6,0,-1.1,-6.1],"type":"box","name":"1995","marker":{"color":"rgba(34,140,141,1)","line":{"color":"rgba(34,140,141,1)"}},"line":{"color":"rgba(34,140,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(31,148,140,0.5)","x":["1996","1996","1996","1996","1996","1996"],"y":[28.3,12.8,0.6,0,18.9,11.1],"type":"box","name":"1996","marker":{"color":"rgba(31,148,140,1)","line":{"color":"rgba(31,148,140,1)"}},"line":{"color":"rgba(31,148,140,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(30,157,137,0.5)","x":["1997","1997","1997","1997","1997","1997"],"y":[20.6,-2.2,3.3,1.7,7.8,27.2],"type":"box","name":"1997","marker":{"color":"rgba(30,157,137,1)","line":{"color":"rgba(30,157,137,1)"}},"line":{"color":"rgba(30,157,137,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(32,164,134,0.5)","x":["1998","1998","1998","1998","1998","1998"],"y":[6.7,23.9,0.6,26.7,25.6,28.3],"type":"box","name":"1998","marker":{"color":"rgba(32,164,134,1)","line":{"color":"rgba(32,164,134,1)"}},"line":{"color":"rgba(32,164,134,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(38,173,129,0.5)","x":["1999","1999","1999","1999","1999","1999"],"y":[17.8,21.7,-3.9,21.1,3.3,26.1],"type":"box","name":"1999","marker":{"color":"rgba(38,173,129,1)","line":{"color":"rgba(38,173,129,1)"}},"line":{"color":"rgba(38,173,129,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(49,181,123,0.5)","x":["2000","2000","2000","2000","2000","2000","2000","2000","2000"],"y":[24.4,23.3,21.7,20,23.9,-1.7,17.8,24.4,-3.3],"type":"box","name":"2000","marker":{"color":"rgba(49,181,123,1)","line":{"color":"rgba(49,181,123,1)"}},"line":{"color":"rgba(49,181,123,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(63,188,115,0.5)","x":["2001","2001","2001","2001","2001","2001","2001","2001"],"y":[-0.6,1.7,2.8,1.1,28.9,16.1,18.3,10.6],"type":"box","name":"2001","marker":{"color":"rgba(63,188,115,1)","line":{"color":"rgba(63,188,115,1)"}},"line":{"color":"rgba(63,188,115,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(79,196,106,0.5)","x":["2002","2002","2002","2002","2002","2002","2002","2002","2002","2002"],"y":[13.3,26.1,17.2,17.2,22.8,18.3,22.2,6.7,26.7,22.8],"type":"box","name":"2002","marker":{"color":"rgba(79,196,106,1)","line":{"color":"rgba(79,196,106,1)"}},"line":{"color":"rgba(79,196,106,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(97,202,96,0.5)","x":["2003","2003","2003","2003"],"y":[2.2,-1.1,26.7,28.3],"type":"box","name":"2003","marker":{"color":"rgba(97,202,96,1)","line":{"color":"rgba(97,202,96,1)"}},"line":{"color":"rgba(97,202,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(117,208,84,0.5)","x":["2004","2004","2004","2004","2004","2004","2004","2004","2004","2004","2004"],"y":[11.7,25.6,21.1,0,23.9,6.7,9.4,3.3,5,13.3,23.3],"type":"box","name":"2004","marker":{"color":"rgba(117,208,84,1)","line":{"color":"rgba(117,208,84,1)"}},"line":{"color":"rgba(117,208,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(139,214,70,0.5)","x":["2005","2005","2005","2005","2005","2005","2005","2005","2005","2005"],"y":[29.4,4.4,30,15.6,25.6,30,-2.2,7.8,19.4,6.1],"type":"box","name":"2005","marker":{"color":"rgba(139,214,70,1)","line":{"color":"rgba(139,214,70,1)"}},"line":{"color":"rgba(139,214,70,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(162,218,55,0.5)","x":["2006","2006","2006","2006","2006","2006","2006","2006","2006","2006","2006","2006"],"y":[0.6,24.4,25.6,2.2,7.8,9.4,23.3,19.4,5.6,22.8,25.6,22.8],"type":"box","name":"2006","marker":{"color":"rgba(162,218,55,1)","line":{"color":"rgba(162,218,55,1)"}},"line":{"color":"rgba(162,218,55,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(185,222,40,0.5)","x":["2007","2007","2007","2007","2007","2007","2007","2007","2007","2007","2007","2007","2007"],"y":[21.7,8.3,19.4,11.1,11.7,26.1,22.2,23.9,6.7,3.9,31.7,10.6,17.2],"type":"box","name":"2007","marker":{"color":"rgba(185,222,40,1)","line":{"color":"rgba(185,222,40,1)"}},"line":{"color":"rgba(185,222,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(209,225,28,0.5)","x":["2008","2008","2008","2008","2008","2008","2008","2008","2008","2008"],"y":[25,19.4,1.1,25,-3.3,22.8,23.9,2.8,9.4,21.1],"type":"box","name":"2008","marker":{"color":"rgba(209,225,28,1)","line":{"color":"rgba(209,225,28,1)"}},"line":{"color":"rgba(209,225,28,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(232,228,25,0.5)","x":["2009","2009","2009","2009","2009","2009","2009","2009","2009","2009"],"y":[28.3,24.4,11.7,17.8,4.4,20.6,21.1,28.9,-4.4,11.1],"type":"box","name":"2009","marker":{"color":"rgba(232,228,25,1)","line":{"color":"rgba(232,228,25,1)"}},"line":{"color":"rgba(232,228,25,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(253,231,37,0.5)","x":["2010","2010","2010","2010","2010","2010","2010","2010","2010","2010"],"y":[27.2,13.3,-8.9,-0.6,12.2,-7.2,5.6,2.2,6.7,24.4],"type":"box","name":"2010","marker":{"color":"rgba(253,231,37,1)","line":{"color":"rgba(253,231,37,1)"}},"line":{"color":"rgba(253,231,37,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
