@@ -2,18 +2,22 @@
 title: "Megan Marziali"
 output: 
   html_document:
-    code_folding: hide
     toc: true
     toc_float: true
 ---
 
-### Biography
+Research Assistant  
+Columbia University
 
-Megan is a 2nd year MPH student at Columbia Mailman School of Public Health. She is in the Department of Epidemiology, with a certificate in Advanced Epidemiology. Her research interests are related to substance use, mental health, HIV and social networks.
+<br><img src="./megan2.jpg" alt="jeff" style="width:65%; border:10px solid"><br>
 
-### To learn more
+### Research
 
-To learn more about my research and professional experience, please visit the [about me](about.html) page.
+My research to date has primarily focused on the impact of psychosocial factors on physical and mental well-being. I have explored the impact of social isolation on mortality among people living with HIV, and investigated the mediating role of depression on the relationship between loneliness and self-rated physical health. I have since begun researching the impact of social support and adolescent-confidant relationships on the relationship between perceived disapproval of substance use and actual adolescent substance use. I aim to continue exploring the role that social support and social networks play on substance use and mental health outcomes.
+
+### About
+
+I obtained a BSc. in Microbiology & Immunology from the [University of Britsh Columbia](https://www.ubc.ca/) in 2018. I will graduate in 2021 with an MPH from the [Columbia Mailman School of Public Health](https://www.publichealth.columbia.edu/), where I continue to study Epidemiology with a certificate in Advanced Epidemiology. To learn more about my research and professional experience, please visit the [about me](about.html) page.
 
 For a full list of publications, including conference presentations, visit the [publications](publications.html) page.
 
