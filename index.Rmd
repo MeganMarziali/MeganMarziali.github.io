@@ -7,7 +7,8 @@ output:
 ---
 
 Research Assistant  
-Columbia University
+Graduate Student, MPH in Epidemiology  
+Columbia University Mailman School of Public Health
 
 <br><img src="./megan2.jpg" alt="jeff" style="width:65%; border:10px solid"><br>
 
