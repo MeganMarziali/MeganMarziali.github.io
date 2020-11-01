@@ -12,9 +12,11 @@ Columbia University Mailman School of Public Health
 
 <br><img src="./megan2.jpg" alt="jeff" style="width:65%; border:10px solid"><br>
 
+
 ### Research
 
 My research to date has primarily focused on the impact of psychosocial factors on physical and mental well-being. I have explored the impact of social isolation on mortality among people living with HIV, and investigated the mediating role of depression on the relationship between loneliness and self-rated physical health. I have since begun researching the impact of social support and adolescent-confidant relationships on the relationship between perceived disapproval of substance use and actual adolescent substance use. I aim to continue exploring the role that social support and social networks play on substance use and mental health outcomes.
+
 
 ### About
 
@@ -22,8 +24,7 @@ I obtained a BSc. in Microbiology & Immunology from the [University of Britsh Co
 
 For a full list of publications, including conference presentations, visit the [publications](publications.html) page.
 
+
 ### Plotly
 
 To view graphs produced from NY NOAA data, please visit the [dashboard](dashboard.html) tab.
-
-
