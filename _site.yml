@@ -7,8 +7,6 @@ navbar:
       href: about.html
     - text: "Publications"
       href: publications.html
-    - text: "Dashboard"
-      href: dashboard.html
   right:
     - icon: fa-paper-plane fa-lg
       href: mailto:<mem2371@cumc.columbia.edu>
