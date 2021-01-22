@@ -1,5 +1,5 @@
 ---
-title: "Resume"
+title: "Publishing Activities"
 output: 
   html_document:
     toc: true
@@ -10,17 +10,19 @@ output:
 
 **Marziali ME**, Prins S, Kajeepeta S, Martins SS. Police interactions in schools and the resulting impact on legal cynicism and attitudes towards law enforcement. 2020. [in preparation]
 
-**Marziali ME**, Levy NS, Martins SS. Perceptions of peer and parental attitudes towards substance use and actual adolescent substance use: Analyzing the impact of adolescent-confidant relationships. 2020. Journal of Adolescent Health [submitted].
+**Marziali ME**, Levy NS, Martins SS. Perceptions of peer and parental attitudes towards substance use and actual adolescent substance use: Analyzing the impact of adolescent-confidant relationships. 2020. Drug and Alcohol Dependence [submitted].
 
-**Marziali ME**, Cassidy-Marie C, Oduwole OA, Hogg RS. Differences in life expectancy gains among Indigenous populations in Australia, Canada and New Zealand: A call for improved metrics in Indigenous health equity. 2020. [in preparation]
-
-**Marziali ME**, Hogg RS, Oduwole OA, Card KG. Predictors of COVID-19 testing rates: A cross-country comparison. 2020. The International Journal of Infectious Disease [under review].
+Bruzelius E, Levy NS, Segura LE, **Marziali ME**, Martins SS. Trends in suicide-related public safety incidents immediately following COVID-19 restrictions in 32 U.S. cities. 2021. Journal of Urban Health. [submitted].
 
 Martins SS, Bruzelius E, Stingone JA, Wheeler-Martin K, Akbarnejad H, Mauro CM, **Marziali ME**, Samples H, Crystal S, Davis CS, Rudolph KE, Keyes KM, Hasin DS, Cerdá M. Prescription opioid laws and opioid-prescibing: Identifying salient opioid law provisions with machine learning. 2020. Epidemiology [submitted].
 
 Castaldelli-Maia JM, **Marziali ME**, Lu Z, Martins SS. Investigating the effect of national government physical distancing measures on depression and anxiety during the COVID-19 pandemic through meta-analysis and meta-regression. 2020. JAMA [submitted].
 
 Ismael F, Bizario JCS, Battagin T, Zaramella B, Leal FE, Torales J, Ventriglio A, **Marziali ME**, Martins SS, Castaldelli-Maia JM. Post-infection depression, anxiety and PTSD: A retrospective cohort study with mild COVID-19 patients. 2020. Lancet Psychiatry [submitted].
+
+Closson K, Nicholson V, Lee M, Card KG, Cassidy-Matthews C, McLinden T, **Marziali ME**, Trigg J, Wang L, Parashar S, Montaner J, Gibbs A, Hart T, Kaida A, Hogg RS. Associations between syndemic factors and HIV outcomes differ by gender and sexual orientation among people living with HIV in British Columbia, Canada. 2021. Annals of Behavioral Medicine. [submitted].
+
+**Marziali ME**, Hogg RS, Oduwole OA, Card KG. Predictors of COVID-19 testing rates: A cross-country comparison. 2020. The International Journal of Infectious Disease [in press].
 
 **Marziali ME**, McLinden T, Card K, Wong C, Trigg J, Salters K, Closson K, Lima V, Hogg RS. Social isolation and all-cause mortality among people living with HIV in British Columbia, Canada. AIDS and Behavior. 2020; doi:10.1007/s10461-020-03000-2
 
@@ -41,6 +43,8 @@ Castellana B, Perdu S, Kim Y, Chan K, Atif J, **Marziali M**, Beristain AG. Mate
 
 ### Oral Presentations
 
+*Segura LE*, Levy NS, **Marziali ME**, Perlmutter AS, Santaella-Tenorio J, Martins SS. The association between prescription opioid misuse and suicidality in United States adolescents: NSDUH 2015-2019. Society for Epidemiologic Research 2020 Meeting. Dec 16-18, 2020. [Internet].
+
 ***Marziali ME***, Armstrong H, Closson K, Barath J, Wang L, McLinden T, Harris M, Roth EA, Moore DM, Lachowsky NJ, Hogg RS, Card KG. Loneliness and Self-Rated Physical Health among Gay, Bisexual and other Men who have Sex with Men in Vancouver, Canada. New York City Epidemiology Forum. Feb 28, 2020. New York City, New York.
 
 ***Marziali ME***, Card K, Armstrong H, Closson K, Barath J, Wang L, McLinden T, Harris M, Roth EA, Moore DM, Lachowsky NJ, Hogg RS. Association Between Loneliness and Physical Health among Gay, Bisexual and other Men who have Sex with Men in Vancouver, Canada. Gay Men’s Health Summit. Oct. 31 – Nov. 1, 2019. Vancouver, BC, Canada.
@@ -52,6 +56,8 @@ Castellana B, Perdu S, Kim Y, Chan K, Atif J, **Marziali M**, Beristain AG. Mate
 ***Marziali ME***, *Nicholson V*, Frank P, Sanchez M, Webster K, Kibel M, Brown J, Closson K, Hogg RS. The Importance of Art in Knowledge Dissemination and Translation: Engaging the Public. Health xChange. May 7, 2019. Vancouver, BC, Canada.
 
 ### Poster Presentations
+
+***Marziali ME***, Levy NS, Martins SS. Peer and parental attitudes towards substance use and actual adolescent substance use: The impact of adolescent-confidant relationships. American Psychopathological Association (APPA) Annual Meeting. March 4-6, 2021. [Internet]
 
 *Closson K*, Nicholson V, Lee M, Card K, Cassidy-Matthews C, McLinden T, **Marziali ME**, Trigg J, Wang L, Parashar S, Montaner J, Gibbs A, Haart TA, Kaida A, Hogg RS. Examining differences in syndemic factors by gender and sexual orientation among women, straight men, and gay, bisexual, and other men who have sex with men living with HIV in British Columbia, Canada. 23rd International AIDS Conference (AIDS 2020). July 6-10, 2020. [Internet].
 
@@ -82,5 +88,18 @@ Castellana B, Perdu S, Kim Y, Chan K, Atif J, **Marziali M**, Beristain AG. Mate
 **Vancouver, BC**  
 
 * Invited to present findings from a research project regarding a supportive housing unit for people living with HIV in Vancouver. Outlined qualitative research methodology for meaningful engagement of people living with HIV, to facilitate greater participation of community members in research projects.
+
+### Reviewer Activities  
+
+**Peer Reviewer**  
+
+* Journal of Indigenous HIV Research (JIHR)  [Sep./20]{style="float:right"}  
+* Journal of Indigenous HIV Research (JIHR)  [Aug./20]{style="float:right"}  
+* PLOS One  [June/20]{style="float:right"}  
+* AIDS & Behavior  [Mar./20]{style="float:right"}  
+
+**Abstract Reviewer**  
+
+* Society for Epidemiologic Research (SER)  [Sep./20]{style="float:right"}  
 
 

@@ -10,7 +10,7 @@ Research Assistant
 Graduate Student, MPH in Epidemiology  
 Columbia University Mailman School of Public Health
 
-<br><img src="./megan2.jpg" alt="jeff" style="width:65%; border:10px solid"><br>
+<br><img src="./megan2.jpg" alt="megan" style="width:65%; border:10px solid"><br>
 
 
 ### Research
@@ -20,11 +20,6 @@ My research to date has primarily focused on the impact of psychosocial factors 
 
 ### About
 
-I obtained a BSc. in Microbiology & Immunology from the [University of Britsh Columbia](https://www.ubc.ca/) in 2018. I will graduate in 2021 with an MPH from the [Columbia Mailman School of Public Health](https://www.publichealth.columbia.edu/), where I continue to study Epidemiology with a certificate in Advanced Epidemiology. To learn more about my research and professional experience, please visit the [about me](about.html) page.
+I obtained a BSc. in Microbiology & Immunology from the [University of Britsh Columbia](https://www.ubc.ca/) in 2018. I will graduate in 2021 with an MPH from the [Columbia Mailman School of Public Health](https://www.publichealth.columbia.edu/), where I currently study Epidemiology with a certificate in Advanced Epidemiology. To learn more about my research and professional experience, please visit the [about me](about.html) page.
 
 For a full list of publications, including conference presentations, visit the [publications](publications.html) page.
-
-
-### Plotly
-
-To view graphs produced from NY NOAA data, please visit the [dashboard](dashboard.html) tab.
