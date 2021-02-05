@@ -8,21 +8,33 @@ output:
 
 ### Peer-Reviewed Publications
 
-**Marziali ME**, Prins S, Kajeepeta S, Martins SS. Police interactions in schools and the resulting impact on legal cynicism and attitudes towards law enforcement. 2020. [in preparation]
+#### In Preparation
 
-**Marziali ME**, Levy NS, Martins SS. Perceptions of peer and parental attitudes towards substance use and actual adolescent substance use: Analyzing the impact of adolescent-confidant relationships. 2020. Drug and Alcohol Dependence [submitted].
+**Marziali ME**, Prins S, Kajeepeta S, Martins SS. Police interactions in schools and the resulting impact on legal cynicism and attitudes towards law enforcement. 2020. Journal of Criminal Justice.
 
-Bruzelius E, Levy NS, Segura LE, **Marziali ME**, Martins SS. Trends in suicide-related public safety incidents immediately following COVID-19 restrictions in 32 U.S. cities. 2021. Journal of Urban Health. [submitted].
+**Marziali ME**, Levy NS, Martins SS. Perceptions of peer and parental attitudes towards substance use and actual adolescent substance use: Analyzing the impact of adolescent-confidant relationships. 2020. Addictive Behaviors.
 
-Martins SS, Bruzelius E, Stingone JA, Wheeler-Martin K, Akbarnejad H, Mauro CM, **Marziali ME**, Samples H, Crystal S, Davis CS, Rudolph KE, Keyes KM, Hasin DS, Cerdá M. Prescription opioid laws and opioid-prescibing: Identifying salient opioid law provisions with machine learning. 2020. Epidemiology [submitted].
+#### Submitted
 
-Castaldelli-Maia JM, **Marziali ME**, Lu Z, Martins SS. Investigating the effect of national government physical distancing measures on depression and anxiety during the COVID-19 pandemic through meta-analysis and meta-regression. 2020. JAMA [submitted].
+Bruzelius E, Levy NS, Segura LE, **Marziali ME**, Martins SS. Trends in suicide-related public safety incidents immediately following COVID-19 restrictions in 32 U.S. cities. 2021. Journal of Urban Health.
 
-Ismael F, Bizario JCS, Battagin T, Zaramella B, Leal FE, Torales J, Ventriglio A, **Marziali ME**, Martins SS, Castaldelli-Maia JM. Post-infection depression, anxiety and PTSD: A retrospective cohort study with mild COVID-19 patients. 2020. Lancet Psychiatry [submitted].
+Martins SS, Bruzelius E, Stingone JA, Wheeler-Martin K, Akbarnejad H, Mauro CM, **Marziali ME**, Samples H, Crystal S, Davis CS, Rudolph KE, Keyes KM, Hasin DS, Cerdá M. Prescription opioid laws and opioid-prescibing: Identifying salient opioid law provisions with machine learning. 2020. Epidemiology.
 
-Closson K, Nicholson V, Lee M, Card KG, Cassidy-Matthews C, McLinden T, **Marziali ME**, Trigg J, Wang L, Parashar S, Montaner J, Gibbs A, Hart T, Kaida A, Hogg RS. Associations between syndemic factors and HIV outcomes differ by gender and sexual orientation among people living with HIV in British Columbia, Canada. 2021. Annals of Behavioral Medicine. [submitted].
+Ismael F, Bizario JCS, Battagin T, Zaramella B, Leal FE, Torales J, Ventriglio A, **Marziali ME**, Martins SS, Castaldelli-Maia JM. Post-infection depression, anxiety and PTSD: A retrospective cohort study with mild COVID-19 patients. 2020. Lancet Psychiatry.
 
-**Marziali ME**, Hogg RS, Oduwole OA, Card KG. Predictors of COVID-19 testing rates: A cross-country comparison. 2020. The International Journal of Infectious Disease [in press].
+Closson K, Nicholson V, Lee M, Card KG, Cassidy-Matthews C, McLinden T, **Marziali ME**, Trigg J, Wang L, Parashar S, Montaner J, Gibbs A, Hart T, Kaida A, Hogg RS. Associations between syndemic factors and HIV outcomes differ by gender and sexual orientation among people living with HIV in British Columbia, Canada. 2021. Annals of Behavioral Medicine.
+
+Burgess H, **Marziali ME**, Collins A, von Bischoffshausen O, Lyndon S, Stacey K, Parashar S, Hogg RS. The effect of building policies on tenant behavioral outcomes in an HIV-specific supportive housing unit. Housing Studies.
+
+#### Under Review
+
+Ismael F, Zaramella B, Battagin T, Bizario JCS, Gallego J, Villela V, Leal FE, Torales J, Ventriglio A, **Marziali ME**, Gonçalves PD, Martins SS, Castaldelli-Maia JM. Substance use in mild COVID-19 patients: A follow-up study. Frontiers in Public Health.
+
+Castaldelli-Maia JM, **Marziali ME**, Lu Z, Martins SS. Investigating the effect of national government physical distancing measures on depression and anxiety during the COVID-19 pandemic through meta-analysis and meta-regression. 2020. Psychological Medicine.
+
+#### Published
+
+**Marziali ME**, Hogg RS, Oduwole OA, Card KG. Predictors of COVID-19 testing rates: A cross-country comparison. 2020. The International Journal of Infectious Disease. 2021; doi:10.1016/j.ijid.2020.12.083
 
 **Marziali ME**, McLinden T, Card K, Wong C, Trigg J, Salters K, Closson K, Lima V, Hogg RS. Social isolation and all-cause mortality among people living with HIV in British Columbia, Canada. AIDS and Behavior. 2020; doi:10.1007/s10461-020-03000-2
 
@@ -32,10 +44,7 @@ Closson K, Nicholson V, Lee M, Card KG, Cassidy-Matthews C, McLinden T, **Marzia
 
 **Marziali ME**, Card K, McLinden T, Closson K,  Wang L, Trigg J, Salters K, Lima VD, Parashar S, Hogg RS. Correlates of social isolation among people living with HIV in Vancouver, British Columbia, Canada. AIDS Care. 2020; doi:10.1080/09540121.2020.1757607
 
-Koehn K, Collins AB, Burgess H,, Von Bischoffshausen O, **Marziali ME**, Salters K, Hogg RS , Parashar S. Understanding the pervasiveness of trauma in a housing facility for people living with HIV: a qualitative analysis from Vancouver, Canada. Journal of Housing Studies. 2019; 
-doi:10.1080/02673037.2019.1648773
-
-Burgess H, **Marziali ME**, Collins A, von Bischoffshausen O, Lyndon S, Stacey K, Parashar S, Hogg RS. The effect of building policies on tenant behavioral outcomes in an HIV-specific supportive housing unit. Housing Studies. [submitted]
+Koehn K, Collins AB, Burgess H,, Von Bischoffshausen O, **Marziali ME**, Salters K, Hogg RS , Parashar S. Understanding the pervasiveness of trauma in a housing facility for people living with HIV: a qualitative analysis from Vancouver, Canada. Journal of Housing Studies. 2019; doi:10.1080/02673037.2019.1648773
 
 O’Neill Z, Bulka O, **Marziali M**, Nah R. Construction of luxCDABE reporter plasmids to investigate regulation of the acrAB and acrEF operons by the AcrS repressor in Escherichia coli BW25113. Journal of Experimental Microbiology & Immunology+. 2018;4:1-9.
 
